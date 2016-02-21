@@ -60,3 +60,11 @@ target/
 
 # Jupyter
 .ipynb_checkpoints
+
+# LaTeX
+*.bbl
+*.blg
+*.aux
+*.out
+*.synctex.gz
+
