@@ -4,9 +4,11 @@
 sudo dnf install environment-modules.x86_64 -y
 
 # Red Hat equilalent of 'build-essentials'
-sudo dnf groupinstall "Development Tools" -y
+sudo dnf groupinstall "Development Tools" -y # include Boost
 sudo dnf groupinstall "Development Libraries" -y
 
-# ?requirement for Intel compilers
-#sudo dnf install kernel-devel -y
-#sudo dnf install gtk3.x86_64 -y
+# C++ development
+sudo dnf install gcc-c++.x86_64 cmake.x86_64
+
+# QMCPACK dependencies
+sudo dnf install libxml2-devel.x86_64 hdf5-devel.x86_64 boost-devel.x86_64
