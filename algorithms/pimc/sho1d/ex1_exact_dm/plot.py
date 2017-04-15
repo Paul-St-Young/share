@@ -21,4 +21,5 @@ if __name__ == '__main__':
     ax.errorbar(myx,myy,yerr=myye,fmt='x',label='sampled')
     ax.plot(finex,analytic_x2(finex,1.0),c='k',label='exact')
     ax.legend()
+    ax.set_xlim(myx[0]-1,myx[-1]+1)
     plt.show()

@@ -1,0 +1,17 @@
+Tutorial for a first implementation of path integral Monte Carlo (PIMC)
+
+Step 1. sample the exact density matrix (DM) with Monte Carlo
+Step 2. build exact DM with exact link action using path integral (PI)
+Step 3. PIMC for simple harmonic oscillator (SHO) using exact link action
+Step 4. approximate the exact link action with primitive approximation
+Step 5. PIMC for simple harmonic oscillator (SHO) using primitive link action
+
+Improvements:
+1. efficienty wiggling of path: eg. bisection move (build on step 2)
+2. better approximation of link action: eg. Feynman-Kac (build on step 3)
+3. calculate other observables: eg. kinetic energy (build on step 2)
+
+Next:
+2 Boltzmannons in a harmonic well/quantum dot
+2 Bosons in a harmonic well
+2 Fermions in a harmonic well

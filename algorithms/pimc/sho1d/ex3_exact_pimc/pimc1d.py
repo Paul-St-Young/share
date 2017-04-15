@@ -8,29 +8,6 @@ from exact_dm import parse_inputs,opt_sig
 #from exact_link import action
 from stats import corr,error
 
-"""
-def kinetic_action(x0,x1,lam,tau):
-    return (x0-x1)**2./(4.*lam*tau)+1./2*np.log(4*np.pi*lam*tau)
-def potential_action(x0,x1,omega,lam,tau):
-    omega2 = omega*omega
-    pot1   = omega2*x0*x0/(4.*lam)
-    pot2   = omega2*x1*x1/(4.*lam)
-    return 0.5*tau*(pot1+pot2)
-def primitive_link_action(x0,x1,lam,omega,tau):
-    return kinetic_action(x0,x1,lam,tau) + potential_action(x0,x1,omega,lam,tau)
-
-
-def action(path,lam,omega,beta,which='exact'):
-    accepted_types = set(['exact','primitive'])
-    if which not in accepted_types:
-        raise RuntimeError('requested action "%s" not available %s' %(which,str(accepted_types)) )
-    nslice = len(path)
-    tot = 0.0
-    for islice in range(nslice):
-        tot += exact_link_action(path[islice],path[(islice+1)%nslice],
-            lam,omega,tau)
-    return tot
-"""
 def exact_link_action(x0,x1,lam,omega,beta):
     ratio = omega/(4*lam*np.sinh(beta*omega))
     const = -0.5*np.log( ratio/np.pi )
@@ -53,7 +30,6 @@ if __name__ == '__main__':
     # extra simulation inputs
     nslice = 10
     tau = beta/nslice
-    lam = 0.5 # 1/2m
 
     # calculate optimal step size
     if use_opt_sig:
