@@ -7,9 +7,10 @@ Step 4. approximate the exact link action with primitive approximation
 Step 5. PIMC for simple harmonic oscillator (SHO) using primitive link action
 
 Improvements:
-1. efficienty wiggling of path: eg. bisection move (build on step 2)
-2. better approximation of link action: eg. Feynman-Kac (build on step 3)
-3. calculate other observables: eg. kinetic energy (build on step 2)
+1. efficient update of action: i.e. do not re-calculate (build on step 3)
+2. efficienty wiggling of path: eg. displacement, bisection move (build on step 2)
+3. better approximation of link action: eg. Feynman-Kac (build on step 3)
+4. calculate other observables: eg. kinetic energy (build on step 2)
 
 Next:
 2 Boltzmannons in a harmonic well/quantum dot

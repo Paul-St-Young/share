@@ -11,7 +11,7 @@ def potential_action(x0,x1,omega,lam,tau):
     pot1   = omega2*x0*x0/(4.*lam)
     pot2   = omega2*x1*x1/(4.*lam)
     return 0.5*tau*(pot1+pot2)
-def primitive_action(x0,x1,lam,omega,tau):
+def primitive_link_action(x0,x1,omega,tau,lam):
     return kinetic_action(x0,x1,lam,tau) + potential_action(x0,x1,omega,lam,tau)
 
 def exact_action(x0,x1,lam,omega,beta):
@@ -25,7 +25,7 @@ def show_actions(ax,myx,x1,lam,omega):
     itau = 0
     for tau in [5.0,1.0,0.5,0.1,0.01]:
         color = colors[itau]
-        myy = primitive_action(myx,x1,lam,omega,tau)
+        myy = primitive_link_action(myx,x1,omega,tau,lam)
         myy0= exact_action(myx,x1,lam,omega,tau)
 
         line0 = ax.plot(myx,myy0,c=color,label=r'$\tau$=%3.2f'%tau)

@@ -5,18 +5,8 @@
 from __future__ import print_function
 import numpy as np
 from exact_dm import parse_inputs,opt_sig
-#from exact_link import action
+from pidm import primitive_link_action
 from stats import corr,error
-
-def kinetic_action(x0,x1,lam,tau):
-    return (x0-x1)**2./(4.*lam*tau)+1./2*np.log(4*np.pi*lam*tau)
-def potential_action(x0,x1,omega,lam,tau):
-    omega2 = omega*omega
-    pot1   = omega2*x0*x0/(4.*lam)
-    pot2   = omega2*x1*x1/(4.*lam)
-    return 0.5*tau*(pot1+pot2)
-def primitive_link_action(x0,x1,omega,tau,lam):
-    return kinetic_action(x0,x1,lam,tau) + potential_action(x0,x1,omega,lam,tau)
 
 def action(path,omega,beta,lam):
     nslice = len(path)

@@ -10,9 +10,8 @@ from stats import corr,error
 opt_sig = lambda omega,beta,lam:np.sqrt( -1./( 2.*ln_rho(1.,omega,beta,lam) ) )
 
 def ln_rho(x,omega,beta,lam):
-    """ exponent of linear harmonic oscillator density matrix:
-         potential V(x) = 0.5*omega**2.*x**2
-        mass is set to 1. implicitly """
+    """ exponent of linear harmonic oscillator density matrix diagonal:
+         potential V(x) = 0.5*m*omega**2.*x**2 =omega**2*x**2/(4*lam) """
     ratio = omega/(4*lam*np.sinh(beta*omega))
     const = -0.5*np.log( ratio/np.pi )
     exp   = -2.*x*x*(np.cosh(beta*omega)-1)
