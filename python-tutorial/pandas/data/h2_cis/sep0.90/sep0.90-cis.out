@@ -1,0 +1,1416 @@
+----- GAMESS execution script 'rungms' -----
+This job is running on host kylin.physics.illinois.edu
+under operating system Linux at Wed Apr 12 18:16:47 CDT 2017
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem                    1K-blocks     Used Available Use% Mounted on
+/dev/mapper/fedora_kylin-root 110123880 60480280  44601484  58% /
+GAMESS temporary binary files will be written to /scr/yyang173
+GAMESS supplementary output files will be written to /home/yyang173/Desktop/attempts/drag-node/hf_grid/cis/sep0.90
+Copying input file sep0.90-cis.inp to your run's scratch directory...
+ 
+Assuming a single but multicore node.
+ 
+
+ Distributed Data Interface kickoff program.
+ Initiating 16 compute processes on 1 nodes to run the following command:
+ /opt/intel17/apps/gamess_2016R1/gamess.00.x sep0.90-cis 
+
+          ******************************************************
+          *         GAMESS VERSION = 18 AUG 2016 (R1)          *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          **************** 64 BIT INTEL VERSION ****************
+
+  SINCE 1993, STUDENTS AND POSTDOCS WORKING AT IOWA STATE UNIVERSITY
+  AND ALSO IN THEIR VARIOUS JOBS AFTER LEAVING ISU HAVE MADE IMPORTANT
+  CONTRIBUTIONS TO THE CODE:
+     IVANA ADAMOVIC, CHRISTINE AIKENS, YURI ALEXEEV, POOJA ARORA,
+     ANDREY ASADCHEV, ROB BELL, PRADIPTA BANDYOPADHYAY, JONATHAN BENTZ,
+     BRETT BODE, KURT BRORSEN, CALEB CARLIN, GALINA CHABAN, WEI CHEN,
+     CHEOL HO CHOI, PAUL DAY, ALBERT DEFUSCO, NUWAN DESILVA, TIM DUDLEY,
+     DMITRI FEDOROV, GRAHAM FLETCHER, MARK FREITAG, KURT GLAESEMANN,
+     DAN KEMP, GRANT MERRILL, NORIYUKI MINEZAWA, JONATHAN MULLIN,
+     TAKESHI NAGATA, SEAN NEDD, HEATHER NETZLOFF, BOSILJKA NJEGIC, RYAN OLSON,
+     MIKE PAK, SPENCER PRUITT, LUKE ROSKOP, JIM SHOEMAKER, LYUDMILA SLIPCHENKO,
+     TONY SMITH, SAROM SOK LEANG, JIE SONG, TETSUYA TAKETSUGU, SIMON WEBB,
+     PENG XU, SOOHAENG YOO, FEDERICO ZAHARIEV
+
+  ADDITIONAL CODE HAS BEEN PROVIDED BY COLLABORATORS IN OTHER GROUPS:
+     IOWA STATE UNIVERSITY:
+          JOE IVANIC, AARON WEST, LAIMUTIS BYTAUTAS, KLAUS RUEDENBERG
+     UNIVERSITY OF TOKYO: KIMIHIKO HIRAO, TAKAHITO NAKAJIMA,
+          TAKAO TSUNEDA, MUNEAKI KAMIYA, SUSUMU YANAGISAWA,
+          KIYOSHI YAGI, MAHITO CHIBA, SEIKEN TOKURA, NAOAKI KAWAKAMI
+     UNIVERSITY OF AARHUS: FRANK JENSEN
+     UNIVERSITY OF IOWA: VISVALDAS KAIRYS, HUI LI
+     NATIONAL INST. OF STANDARDS AND TECHNOLOGY: WALT STEVENS, DAVID GARMER
+     UNIVERSITY OF PISA: BENEDETTA MENNUCCI, JACOPO TOMASI
+     UNIVERSITY OF MEMPHIS: HENRY KURTZ, PRAKASHAN KORAMBATH
+     UNIVERSITY OF ALBERTA: TOBY ZENG, MARIUSZ KLOBUKOWSKI
+     UNIVERSITY OF NEW ENGLAND: MARK SPACKMAN
+     MIE UNIVERSITY: HIROAKI UMEDA
+     NAT. INST. OF ADVANCED INDUSTRIAL SCIENCE AND TECHNOLOGY: KAZUO KITAURA
+     MICHIGAN STATE UNIVERSITY:
+          KAROL KOWALSKI, MARTA WLOCH, JEFFREY GOUR, JESSE LUTZ,
+          WEI LI, PIOTR PIECUCH
+     UNIVERSITY OF SILESIA: MONIKA MUSIAL, STANISLAW KUCHARSKI
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX:
+          OLIVIER QUINET, BENOIT CHAMPAGNE
+     UNIVERSITY OF CALIFORNIA - SANTA BARBARA: BERNARD KIRTMAN
+     INSTITUTE FOR MOLECULAR SCIENCE:
+          KAZUYA ISHIMURA, MICHIO KATOUDA, AND SHIGERU NAGASE
+     UNIVERSITY OF NOTRE DAME: ANNA POMOGAEVA, DAN CHIPMAN
+     KYUSHU UNIVERSITY:
+          HARUYUKI NAKANO,
+          FENG LONG GU, JACEK KORCHOWIEC, MARCIN MAKOWSKI, AND YURIKO AOKI,
+          HIROTOSHI MORI AND EISAKU MIYOSHI
+     PENNSYLVANIA STATE UNIVERSITY:
+          TZVETELIN IORDANOV, CHET SWALINA, JONATHAN SKONE,
+          SHARON HAMMES-SCHIFFER
+     WASEDA UNIVERSITY:
+          MASATO KOBAYASHI, TOMOKO AKAMA, TSUGUKI TOUMA,
+          TAKESHI YOSHIKAWA, YASUHIRO IKABATA, JUNJI SEINO,
+          YUYA NAKAJIMA, HIROMI NAKAI
+     NANJING UNIVERSITY: SHUHUA LI
+     UNIVERSITY OF NEBRASKA:
+          PEIFENG SU, DEJUN SI, NANDUN THELLAMUREGE, YALI WANG, HUI LI
+     UNIVERSITY OF ZURICH: ROBERTO PEVERATI, KIM BALDRIDGE
+     N. COPERNICUS UNIVERSITY AND JACKSON STATE UNIVERSITY:
+          MARIA BARYSZ
+     UNIVERSITY OF COPENHAGEN: Jimmy Kromann, CASPER STEINMANN
+     TOKYO INSTITUTE OF TECHNOLOGY: HIROYA NAKATA
+     NAGOYA UNIVERSITY: YOSHIO NISHIMOTO, STEPHAN IRLE
+     MOSCOW STATE UNIVERSITY: VLADIMIR MIRONOV
+
+
+ PARALLEL VERSION RUNNING ON       16 PROCESSORS IN        1 NODES.
+
+ EXECUTION OF GAMESS BEGUN Wed Apr 12 18:16:47 2017
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $contrl coord=unique icharg=0 ispher=1 mult=1 runtyp=energy                    
+ INPUT CARD>         scftyp=rhf cityp=cis units=bohr  $end                                  
+ INPUT CARD> $basis  gbasis=cct  $end                                                       
+ INPUT CARD> $guess  guess=huckel  $end                                                     
+ INPUT CARD> $cis    nstate=5 $end                                                          
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>A molecule.                                                                     
+ INPUT CARD>C1                                                                              
+ INPUT CARD>H 1.00       0.00000000       0.00000000       0.00000000                       
+ INPUT CARD>H 1.00       0.900000000       0.00000000       0.00000000                      
+ INPUT CARD> $END                                                                           
+    1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=CCT          IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ A molecule.                                                                     
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ H           1.0     0.0000000000        0.0000000000        0.0000000000
+ H           1.0     0.9000000000        0.0000000000        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 H          2 H     
+
+   1 H       0.0000000    0.4762595 *
+   2 H       0.4762595 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ H         
+
+      1   S       1            33.8700000    0.025494863235
+      1   S       2             5.0950000    0.190362765893
+      1   S       3             1.1590000    0.852162022245
+
+      2   S       4             0.3258000    1.000000000000
+
+      3   S       5             0.1027000    1.000000000000
+
+      4   P       6             1.4070000    1.000000000000
+
+      5   P       7             0.3880000    1.000000000000
+
+      6   D       8             1.0570000    1.000000000000
+
+ H         
+
+      7   S       9            33.8700000    0.025494863235
+      7   S      10             5.0950000    0.190362765893
+      7   S      11             1.1590000    0.852162022245
+
+      8   S      12             0.3258000    1.000000000000
+
+      9   S      13             0.1027000    1.000000000000
+
+     10   P      14             1.4070000    1.000000000000
+
+     11   P      15             0.3880000    1.000000000000
+
+     12   D      16             1.0570000    1.000000000000
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =   12
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   30
+ NOTE: THIS RUN WILL RESTRICT THE MO VARIATION SPACE TO SPHERICAL HARMONICS.
+ THE NUMBER OF ORBITALS KEPT IN THE VARIATIONAL SPACE WILL BE PRINTED LATER.
+ NUMBER OF ELECTRONS                          =    2
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    1
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    1
+ TOTAL NUMBER OF ATOMS                        =    2
+ THE NUCLEAR REPULSION ENERGY IS        1.1111111111
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR,
+ ORBITAL LZ DEGENERACY TOLERANCE ETOLLZ= 1.00E-06
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=ENERGY       EXETYP=RUN     
+ MPLEVL=       0     CITYP =CIS          CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=       1     NOSYM =       0     MAXIT =      30     UNITS =BOHR    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER  16 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= T  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    30     2     1
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTOFF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------
+     CI-SINGLES CONTROL INFORMATION
+     ------------------------------
+     NACORE =        0  NBCORE   =        0
+     NSTATE =        5  IROOT    =        1
+     HAMTYP = SAPS      SAP MULT =        1
+     DIAGZN = DAVID     MXVEC    =       40
+     NDAVIT =       50  DAVCVG   = 1.00E-05
+     CISPRP =        F  NGSVEC   =       10
+     MNMEDG =        F  MNMEOP   =        F
+     CHFSLV = CONJG     RDCISV   =        F
+     DGAPRX =        T
+
+     NUMBER OF CORE -A-  ORBITALS =     0
+     NUMBER OF CORE -B-  ORBITALS =     0
+     NUMBER OF OCC. -A-  ORBITALS =     1
+     NUMBER OF OCC. -B-  ORBITALS =     1
+     NUMBER OF MOLECULAR ORBITALS =    30
+     NUMBER OF   BASIS  FUNCTIONS =    30
+
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+ -- VARIATIONAL SPACE WILL BE RESTRICTED TO PURE SPHERICAL HARMONICS ONLY --
+ AFTER EXCLUDING CONTAMINANT COMBINATIONS FROM THE CARTESIAN GAUSSIAN BASIS
+ SET, THE NUMBER OF SPHERICAL HARMONICS KEPT IN THE VARIATION SPACE IS   28
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   28
+
+ ..... DONE SETTING UP THE RUN .....
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.0 SECONDS, CPU UTILIZATION IS  40.00%
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.1 SECONDS, CPU UTILIZATION IS  13.33%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      8082 WORDS.
+
+ STATISTICS FOR GENERATION OF SYMMETRY ORBITAL -Q- MATRIX
+ NUMBER OF CARTESIAN ATOMIC ORBITALS=         30
+ NUMBER OF SPHERICAL CONTAMINANTS DROPPED=     2
+ NUMBER OF LINEARLY DEPENDENT MOS DROPPED=     0
+ TOTAL NUMBER OF MOS IN VARIATION SPACE=      28
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     1 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A        7=A   
+     8=A        9=A       10=A       11=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ CPU     0: STEP CPU TIME=     0.01 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.2 SECONDS, CPU UTILIZATION IS  12.50%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   90474 WORDS OF MEMORY.
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =    7
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =    7
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =    7
+ II,JST,KST,LST =  7  1  1  1 NREC =         1 INTLOC =   43
+ II,JST,KST,LST =  8  1  1  1 NREC =         1 INTLOC =   43
+ II,JST,KST,LST =  9  1  1  1 NREC =         1 INTLOC =  469
+ II,JST,KST,LST = 10  1  1  1 NREC =         1 INTLOC =  469
+ II,JST,KST,LST = 11  1  1  1 NREC =         1 INTLOC =  469
+ II,JST,KST,LST = 12  1  1  1 NREC =         1 INTLOC = 1577
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =               28697
+         16 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.3 SECONDS, CPU UTILIZATION IS  16.13%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         1.1111111111
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=T
+     DENSITY MATRIX CONV=  1.00E-06
+     SOSCF WILL OPTIMIZE      27 ORBITAL ROTATIONS, SOGTOL=   0.250
+     MEMORY REQUIRED FOR RHF ITERS=     36828 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+   1  0  0       -1.0264567819    -1.0264567819   0.066382158   0.000000000
+          ---------------START SECOND ORDER SCF---------------
+   2  1  0       -1.0422097809    -0.0157529990   0.009218330   0.012276846
+   3  2  0       -1.0424411921    -0.0002314112   0.002014325   0.001563339
+   4  3  0       -1.0424478908    -0.0000066987   0.000103929   0.000137231
+   5  4  0       -1.0424479520    -0.0000000612   0.000012720   0.000026268
+   6  5  0       -1.0424479535    -0.0000000015   0.000000546   0.000001177
+   7  6  0       -1.0424479535    -0.0000000000   0.000000121   0.000000169
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS       -1.0424479535 AFTER   7 ITERATIONS
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     4 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     5 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    7) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    8) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    11 (    9) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (   10) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    13 (   11) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    14 (   11) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    15 (   12) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    16 (   12) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    17 (   13) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    18 (   13) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    19 (   14) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    20 (   15) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    21 (   15) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    22 (   16) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    23 (   16) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    24 (   17) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    25 (   18) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    26 (   19) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    27 (   19) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    28 (   20) HAS LZ(WEIGHT)= 0.00(100.0%) 
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -0.6915     0.1928     0.2797     0.6995     0.7280
+                     A          A          A          A          A   
+    1  H  1  S    0.225421  -0.018023  -0.060499  -0.140081   0.000000
+    2  H  1  S    0.267415   2.996149  -0.643491 -12.163339   0.000000
+    3  H  1  S    0.092317  -4.149724   0.832430   3.895277   0.000000
+    4  H  1  X    0.014360   0.000237  -0.024903   0.046081   0.000000
+    5  H  1  Y    0.000000   0.000000   0.000000   0.000000  -0.052255
+    6  H  1  Z    0.000000   0.000000   0.000000   0.000000   0.009725
+    7  H  1  X    0.007556   0.723621   0.109030  -2.606522   0.000000
+    8  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.539439
+    9  H  1  Z    0.000000   0.000000   0.000000   0.000000  -0.100390
+   10  H  1 XX    0.000786   0.013589   0.000983  -0.043937   0.000000
+   11  H  1 YY   -0.000393  -0.006794  -0.000491   0.021969   0.000000
+   12  H  1 ZZ   -0.000393  -0.006794  -0.000491   0.021969   0.000000
+   13  H  1 XY    0.000000   0.000000   0.000000   0.000000   0.004270
+   14  H  1 XZ    0.000000   0.000000   0.000000   0.000000  -0.000795
+   15  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   16  H  2  S    0.225421   0.018023  -0.060499   0.140081   0.000000
+   17  H  2  S    0.267415  -2.996149  -0.643491  12.163339   0.000000
+   18  H  2  S    0.092317   4.149724   0.832430  -3.895277   0.000000
+   19  H  2  X   -0.014360   0.000237   0.024903   0.046081   0.000000
+   20  H  2  Y    0.000000   0.000000   0.000000   0.000000  -0.052255
+   21  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.009725
+   22  H  2  X   -0.007556   0.723621  -0.109030  -2.606522   0.000000
+   23  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.539439
+   24  H  2  Z    0.000000   0.000000   0.000000   0.000000  -0.100390
+   25  H  2 XX    0.000786  -0.013589   0.000983   0.043937   0.000000
+   26  H  2 YY   -0.000393   0.006794  -0.000491  -0.021969   0.000000
+   27  H  2 ZZ   -0.000393   0.006794  -0.000491  -0.021969   0.000000
+   28  H  2 XY    0.000000   0.000000   0.000000   0.000000  -0.004270
+   29  H  2 XZ    0.000000   0.000000   0.000000   0.000000   0.000795
+   30  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+
+                      6          7          8          9         10
+                    0.7280     1.1379     1.1379     1.1445     1.6040
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.000000   0.000000   0.124030   0.139580
+    2  H  1  S    0.000000   0.000000   0.000000   0.677863 -29.929733
+    3  H  1  S    0.000000   0.000000   0.000000  -0.386595   2.881120
+    4  H  1  X    0.000000   0.000000   0.000000   0.016235   0.225579
+    5  H  1  Y   -0.009725   0.180665   0.042410   0.000000   0.000000
+    6  H  1  Z   -0.052255  -0.042410   0.180665   0.000000   0.000000
+    7  H  1  X    0.000000   0.000000   0.000000  -1.658359  -8.223252
+    8  H  1  Y    0.100390   2.231241   0.523773   0.000000   0.000000
+    9  H  1  Z    0.539439  -0.523773   2.231241   0.000000   0.000000
+   10  H  1 XX    0.000000   0.000000   0.000000  -0.183269  -0.036413
+   11  H  1 YY    0.000000   0.000000   0.000000   0.091635   0.018206
+   12  H  1 ZZ    0.000000   0.000000   0.000000   0.091635   0.018206
+   13  H  1 XY    0.000795   0.313290   0.073543   0.000000   0.000000
+   14  H  1 XZ    0.004270  -0.073543   0.313290   0.000000   0.000000
+   15  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   16  H  2  S    0.000000   0.000000   0.000000   0.124030  -0.139580
+   17  H  2  S    0.000000   0.000000   0.000000   0.677863  29.929733
+   18  H  2  S    0.000000   0.000000   0.000000  -0.386595  -2.881120
+   19  H  2  X    0.000000   0.000000   0.000000  -0.016235   0.225579
+   20  H  2  Y   -0.009725  -0.180665  -0.042410   0.000000   0.000000
+   21  H  2  Z   -0.052255   0.042410  -0.180665   0.000000   0.000000
+   22  H  2  X    0.000000   0.000000   0.000000   1.658359  -8.223252
+   23  H  2  Y    0.100390  -2.231241  -0.523773   0.000000   0.000000
+   24  H  2  Z    0.539439   0.523773  -2.231241   0.000000   0.000000
+   25  H  2 XX    0.000000   0.000000   0.000000  -0.183269   0.036413
+   26  H  2 YY    0.000000   0.000000   0.000000   0.091635  -0.018206
+   27  H  2 ZZ    0.000000   0.000000   0.000000   0.091635  -0.018206
+   28  H  2 XY   -0.000795   0.313290   0.073543   0.000000   0.000000
+   29  H  2 XZ   -0.004270  -0.073543   0.313290   0.000000   0.000000
+   30  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     11         12         13         14         15
+                    2.2035     3.0372     3.2668     3.2668     3.5265
+                     A          A          A          A          A   
+    1  H  1  S    1.071727   0.071728   0.000000   0.000000   0.000000
+    2  H  1  S   -0.966625  13.537991   0.000000   0.000000   0.000000
+    3  H  1  S    0.351857  -0.104330   0.000000   0.000000   0.000000
+    4  H  1  X    0.001823  -0.904549   0.000000   0.000000   0.000000
+    5  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.505960
+    6  H  1  Z    0.000000   0.000000   0.000000   0.000000  -0.498492
+    7  H  1  X   -0.695370   4.357909   0.000000   0.000000   0.000000
+    8  H  1  Y    0.000000   0.000000   0.000000   0.000000  -0.279013
+    9  H  1  Z    0.000000   0.000000   0.000000   0.000000   0.274895
+   10  H  1 XX   -0.103635  -0.365010   0.000000   0.000000   0.000000
+   11  H  1 YY    0.051817   0.182505  -0.056789   0.473082   0.000000
+   12  H  1 ZZ    0.051817   0.182505   0.056789  -0.473082   0.000000
+   13  H  1 XY    0.000000   0.000000   0.000000   0.000000   0.035170
+   14  H  1 XZ    0.000000   0.000000   0.000000   0.000000  -0.034651
+   15  H  1 YZ    0.000000   0.000000   0.546268   0.065574   0.000000
+   16  H  2  S    1.071727  -0.071728   0.000000   0.000000   0.000000
+   17  H  2  S   -0.966625 -13.537991   0.000000   0.000000   0.000000
+   18  H  2  S    0.351857   0.104330   0.000000   0.000000   0.000000
+   19  H  2  X   -0.001823  -0.904549   0.000000   0.000000   0.000000
+   20  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.505960
+   21  H  2  Z    0.000000   0.000000   0.000000   0.000000  -0.498492
+   22  H  2  X    0.695370   4.357909   0.000000   0.000000   0.000000
+   23  H  2  Y    0.000000   0.000000   0.000000   0.000000  -0.279013
+   24  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.274895
+   25  H  2 XX   -0.103635   0.365010   0.000000   0.000000   0.000000
+   26  H  2 YY    0.051817  -0.182505  -0.056789   0.473082   0.000000
+   27  H  2 ZZ    0.051817  -0.182505   0.056789  -0.473082   0.000000
+   28  H  2 XY    0.000000   0.000000   0.000000   0.000000  -0.035170
+   29  H  2 XZ    0.000000   0.000000   0.000000   0.000000   0.034651
+   30  H  2 YZ    0.000000   0.000000   0.546268   0.065574   0.000000
+
+                     16         17         18         19         20
+                    3.5265     3.6137     3.6137     3.7523     4.3585
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.000000   0.000000   0.602301   0.000000
+    2  H  1  S    0.000000   0.000000   0.000000   0.021512   0.000000
+    3  H  1  S    0.000000   0.000000   0.000000  -0.123984   0.000000
+    4  H  1  X    0.000000   0.000000   0.000000   0.311550   0.000000
+    5  H  1  Y    0.498492  -0.549522   0.340760   0.000000   0.000000
+    6  H  1  Z    0.505960  -0.340760  -0.549522   0.000000   0.000000
+    7  H  1  X    0.000000   0.000000   0.000000  -1.442534   0.000000
+    8  H  1  Y   -0.274895  -1.590029   0.985982   0.000000   0.000000
+    9  H  1  Z   -0.279013  -0.985982  -1.590029   0.000000   0.000000
+   10  H  1 XX    0.000000   0.000000   0.000000  -0.907602   0.000000
+   11  H  1 YY    0.000000   0.000000   0.000000   0.453801   0.008023
+   12  H  1 ZZ    0.000000   0.000000   0.000000   0.453801  -0.008023
+   13  H  1 XY    0.034651  -1.200461   0.744410   0.000000   0.000000
+   14  H  1 XZ    0.035170  -0.744410  -1.200461   0.000000   0.000000
+   15  H  1 YZ    0.000000   0.000000   0.000000   0.000000   1.198202
+   16  H  2  S    0.000000   0.000000   0.000000   0.602301   0.000000
+   17  H  2  S    0.000000   0.000000   0.000000   0.021512   0.000000
+   18  H  2  S    0.000000   0.000000   0.000000  -0.123984   0.000000
+   19  H  2  X    0.000000   0.000000   0.000000  -0.311550   0.000000
+   20  H  2  Y    0.498492   0.549522  -0.340760   0.000000   0.000000
+   21  H  2  Z    0.505960   0.340760   0.549522   0.000000   0.000000
+   22  H  2  X    0.000000   0.000000   0.000000   1.442534   0.000000
+   23  H  2  Y   -0.274895   1.590029  -0.985982   0.000000   0.000000
+   24  H  2  Z   -0.279013   0.985982   1.590029   0.000000   0.000000
+   25  H  2 XX    0.000000   0.000000   0.000000  -0.907602   0.000000
+   26  H  2 YY    0.000000   0.000000   0.000000   0.453801  -0.008023
+   27  H  2 ZZ    0.000000   0.000000   0.000000   0.453801   0.008023
+   28  H  2 XY   -0.034651  -1.200461   0.744410   0.000000   0.000000
+   29  H  2 XZ   -0.035170  -0.744410  -1.200461   0.000000   0.000000
+   30  H  2 YZ    0.000000   0.000000   0.000000   0.000000  -1.198202
+
+                     21         22         23         24         25
+                    4.3585     4.3899     4.3899     5.1393     6.8192
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.000000   0.000000   0.577422   1.882027
+    2  H  1  S    0.000000   0.000000   0.000000  18.849357  -0.960370
+    3  H  1  S    0.000000   0.000000   0.000000  -1.305134   0.187024
+    4  H  1  X    0.000000   0.000000   0.000000  -0.930511  -1.194952
+    5  H  1  Y    0.000000   0.449580  -0.182339   0.000000   0.000000
+    6  H  1  Z    0.000000  -0.182339  -0.449580   0.000000   0.000000
+    7  H  1  X    0.000000   0.000000   0.000000   5.668631  -1.166804
+    8  H  1  Y    0.000000  -0.131660   0.053398   0.000000   0.000000
+    9  H  1  Z    0.000000   0.053398   0.131660   0.000000   0.000000
+   10  H  1 XX    0.000000   0.000000   0.000000   0.860875  -1.422151
+   11  H  1 YY   -1.037674   0.000000   0.000000  -0.430437   0.711076
+   12  H  1 ZZ    1.037674   0.000000   0.000000  -0.430437   0.711076
+   13  H  1 XY    0.000000  -0.823879   0.334145   0.000000   0.000000
+   14  H  1 XZ    0.000000   0.334145   0.823879   0.000000   0.000000
+   15  H  1 YZ    0.009264   0.000000   0.000000   0.000000   0.000000
+   16  H  2  S    0.000000   0.000000   0.000000  -0.577422   1.882027
+   17  H  2  S    0.000000   0.000000   0.000000 -18.849357  -0.960370
+   18  H  2  S    0.000000   0.000000   0.000000   1.305134   0.187024
+   19  H  2  X    0.000000   0.000000   0.000000  -0.930511   1.194952
+   20  H  2  Y    0.000000   0.449580  -0.182339   0.000000   0.000000
+   21  H  2  Z    0.000000  -0.182339  -0.449580   0.000000   0.000000
+   22  H  2  X    0.000000   0.000000   0.000000   5.668631   1.166804
+   23  H  2  Y    0.000000  -0.131660   0.053398   0.000000   0.000000
+   24  H  2  Z    0.000000   0.053398   0.131660   0.000000   0.000000
+   25  H  2 XX    0.000000   0.000000   0.000000  -0.860875  -1.422151
+   26  H  2 YY    1.037674   0.000000   0.000000   0.430437   0.711076
+   27  H  2 ZZ   -1.037674   0.000000   0.000000   0.430437   0.711076
+   28  H  2 XY    0.000000   0.823879  -0.334145   0.000000   0.000000
+   29  H  2 XZ    0.000000  -0.334145  -0.823879   0.000000   0.000000
+   30  H  2 YZ   -0.009264   0.000000   0.000000   0.000000   0.000000
+
+                     26         27         28
+                    7.0402     7.0402    10.3588
+                     A          A          A   
+    1  H  1  S    0.000000   0.000000  -4.051063
+    2  H  1  S    0.000000   0.000000   2.148823
+    3  H  1  S    0.000000   0.000000   0.275802
+    4  H  1  X    0.000000   0.000000  -2.631488
+    5  H  1  Y    2.336239   1.932452   0.000000
+    6  H  1  Z   -1.932452   2.336239   0.000000
+    7  H  1  X    0.000000   0.000000   0.824163
+    8  H  1  Y    0.836430   0.691864   0.000000
+    9  H  1  Z   -0.691864   0.836430   0.000000
+   10  H  1 XX    0.000000   0.000000  -0.629346
+   11  H  1 YY    0.000000   0.000000   0.314673
+   12  H  1 ZZ    0.000000   0.000000   0.314673
+   13  H  1 XY    1.502958   1.243192   0.000000
+   14  H  1 XZ   -1.243192   1.502958   0.000000
+   15  H  1 YZ    0.000000   0.000000   0.000000
+   16  H  2  S    0.000000   0.000000   4.051063
+   17  H  2  S    0.000000   0.000000  -2.148823
+   18  H  2  S    0.000000   0.000000  -0.275802
+   19  H  2  X    0.000000   0.000000  -2.631488
+   20  H  2  Y   -2.336239  -1.932452   0.000000
+   21  H  2  Z    1.932452  -2.336239   0.000000
+   22  H  2  X    0.000000   0.000000   0.824163
+   23  H  2  Y   -0.836430  -0.691864   0.000000
+   24  H  2  Z    0.691864  -0.836430   0.000000
+   25  H  2 XX    0.000000   0.000000   0.629346
+   26  H  2 YY    0.000000   0.000000  -0.314673
+   27  H  2 ZZ    0.000000   0.000000  -0.314673
+   28  H  2 XY    1.502958   1.243192   0.000000
+   29  H  2 XZ   -1.243192   1.502958   0.000000
+   30  H  2 YZ    0.000000   0.000000   0.000000
+ ...... END OF RHF CALCULATION ......
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=        0.1 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.6 SECONDS, CPU UTILIZATION IS  11.29%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =      -2.9241078684
+                TWO ELECTRON ENERGY =       0.7705488038
+           NUCLEAR REPULSION ENERGY =       1.1111111111
+                                      ------------------
+                       TOTAL ENERGY =      -1.0424479535
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =       0.7705488038
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =      -4.4153786623
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       1.1111111111
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =      -2.5337187474
+               TOTAL KINETIC ENERGY =       1.4912707939
+                 VIRIAL RATIO (V/T) =       1.6990333062
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=     -1.3830102304
+          BARE H ENERGY=     -2.9241078684
+     ELECTRONIC ENERGY =     -2.1535590494
+         KINETIC ENERGY=      1.4912707939
+          N-N REPULSION=      1.1111111111
+           TOTAL ENERGY=     -1.0424479383
+        SIGMA PART(1+2)=     -2.1535590494
+               (K,V1,2)=      1.4912707939     -4.4153786623      0.7705488190
+           PI PART(1+2)=      0.0000000000
+               (K,V1,2)=      0.0000000000      0.0000000000      0.0000000000
+  SIGMA SKELETON, ERROR=     -1.0424479383     -0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  H  1  S      0.34899     0.23276
+              2  H  1  S      0.50159     0.28436
+              3  H  1  S      0.13920     0.17216
+              4  H  1  X      0.00618     0.01795
+              5  H  1  Y      0.00000     0.00000
+              6  H  1  Z      0.00000     0.00000
+              7  H  1  X      0.00388     0.01699
+              8  H  1  Y      0.00000     0.00000
+              9  H  1  Z      0.00000     0.00000
+             10  H  1 XX      0.00004     0.13553
+             11  H  1 YY      0.00012     0.07013
+             12  H  1 ZZ      0.00000     0.07013
+             13  H  1 XY      0.00000     0.00000
+             14  H  1 XZ      0.00000     0.00000
+             15  H  1 YZ      0.00000     0.00000
+             16  H  2  S      0.34899     0.23276
+             17  H  2  S      0.50159     0.28436
+             18  H  2  S      0.13920     0.17216
+             19  H  2  X      0.00618     0.01795
+             20  H  2  Y      0.00000     0.00000
+             21  H  2  Z      0.00000     0.00000
+             22  H  2  X      0.00388     0.01699
+             23  H  2  Y      0.00000     0.00000
+             24  H  2  Z      0.00000     0.00000
+             25  H  2 XX      0.00004     0.13553
+             26  H  2 YY      0.00012     0.07013
+             27  H  2 ZZ      0.00000     0.07013
+             28  H  2 XY      0.00000     0.00000
+             29  H  2 XZ      0.00000     0.00000
+             30  H  2 YZ      0.00000     0.00000
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2
+
+    1    0.5417850
+    2    0.4582150   0.5417850
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 H             1.000000    0.000000         1.000000    0.000000
+    2 H             1.000000    0.000000         1.000000    0.000000
+
+          MULLIKEN SPHERICAL HARMONIC POPULATIONS
+       ATOM           S       P       D      F      G      H      I    TOTAL
+    1 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+    2 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.450000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.000000    0.000000    0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.1 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.7 SECONDS, CPU UTILIZATION IS  10.00%
+
+ MXVEC CANNOT BE BIGGER THAN THE NUMBER OF CIS CONFIGS
+ SETTING MXVEC = NCFG
+
+
+          ---------------------------------------------
+             ATOMIC ORBITAL BASIS CI-SINGLES ENERGY
+             PROGRAM WRITTEN BY SIMON P. WEBB
+          ---------------------------------------------
+
+ # CORE ORBITALS      =    0
+ # OCCUPIED ORBITALS  =    1
+ # MOLECULAR ORBITALS =   28
+ # BASIS FUNCTIONS    =   30
+
+ NUMBER OF CIS SPIN-ADAPTED ANTISYMMETRIZED PRODUCTS (SAPS) IS      27
+
+ APPROXIMATING CIS HAMILTONIAN DIAGONAL ELEMENTS USING ONLY ORBITAL ENERGIES
+
+ -CIS- HAM. DIAGONAL ELEMENTS  TOOK      0.000 SECONDS
+
+ MIN MEMORY REQ. FOR CIS ENERGY FOCK-LIKE BUILDS =      1800 WORDS
+ MEMORY REQ. FOR SINGLE BATCH BUILDS             =     48600 WORDS
+ MEMORY AVAILABLE                                =    958955 WORDS
+
+ SINGLE BATCH ENERGY CALCULATION WILL BE PERFORMED
+
+ UNIT VECTOR GUESS AT CIS COEFFICIENTS ...
+
+ USING IN MEMORY DIAGONALIZTION TO FIND CIS EIGENVALUES AND EIGENVECTORS ...
+
+ STATE    1 ENERGY=       -0.4347781542
+ STATE    2 ENERGY=       -0.3347558857
+ STATE    3 ENERGY=       -0.0153707022
+ STATE    4 ENERGY=       -0.0153707022
+ STATE    5 ENERGY=        0.0180156717
+
+
+        --------------------------------------------------------
+        RESULTS FROM SPIN-ADAPTED ANTISYMMETRIZED PRODUCT (SAPS)
+        BASED ATOMIC ORBITAL CI-SINGLES ENERGY CALCULATION
+        --------------------------------------------------------
+
+ PRINTING CIS COEFFICIENTS LARGER THAN  0.050000
+
+ RHF REFERENCE ENERGY  =        -1.0424479535
+
+
+ EXCITED STATE   1  ENERGY=        -0.4347781542  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          2                   0.99527191
+             1          4                   0.09625576
+          ----------------------------------------------
+
+
+ EXCITED STATE   2  ENERGY=        -0.3347558857  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          3                  -0.99998323
+          ----------------------------------------------
+
+
+ EXCITED STATE   3  ENERGY=        -0.0153707022  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          5                   0.97226847
+             1          6                   0.23385235
+          ----------------------------------------------
+
+
+ EXCITED STATE   4  ENERGY=        -0.0153707022  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          5                  -0.23385235
+             1          6                   0.97226847
+          ----------------------------------------------
+
+
+ EXCITED STATE   5  ENERGY=         0.0180156717  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          2                   0.09583924
+             1          4                  -0.99475444
+          ----------------------------------------------
+
+  ---------------------------------------------------------------------
+                    CI-SINGLES EXCITATION ENERGIES
+  STATE       HARTREE        EV      KCAL/MOL       CM-1         NM
+  ---------------------------------------------------------------------
+   1A     0.6076697993    16.5355    381.3186     133368.11      74.98
+   1A     0.7076920679    19.2573    444.0835     155320.46      64.38
+   1A     1.0270772513    27.9482    644.5008     225417.40      44.36
+   1A     1.0270772513    27.9482    644.5008     225417.40      44.36
+   1A     1.0604636252    28.8567    665.4511     232744.86      42.97
+
+ -CIS- ENERGY                  TOOK      0.010 SECONDS
+
+  ---------------------------------------------------------------------
+                    CIS TRANSITION DIPOLE MOMENTS AND
+                    EXPECTATION VALUES OF DIPOLE MOMENTS
+  ---------------------------------------------------------------------
+
+ GROUND STATE (SCF) DIPOLE=    -0.000000     0.000000     0.000000 DEBYE
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  1
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.0424479535       -0.4347781542
+ EXCITATION ENERGY =  3.9983E+15 [1/SEC] =   133368.10 [1/CM] =     16.54 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.975693    0.000000    0.000000    0.975693 E*BOHR
+ TRANSITION DIPOLE =    2.479983    0.000000    0.000000    2.479983 DEBYE
+ OSCILLATOR STRENGTH =    0.385658
+ EINSTEIN COEFFICIENTS: A=  4.5757E+09 1/SEC; B=  3.8635E+08 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  2
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.0424479535       -0.3347558857
+ EXCITATION ENERGY =  4.6564E+15 [1/SEC] =   155320.46 [1/CM] =     19.26 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  7.7580E-21 1/SEC; B=  4.1471E-22 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  3
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.0424479535       -0.0153707022
+ EXCITATION ENERGY =  6.7578E+15 [1/SEC] =   225417.40 [1/CM] =     27.95 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000    1.050034    0.054696    1.051458 E*BOHR
+ TRANSITION DIPOLE =   -0.000000    2.668942    0.139024    2.672560 DEBYE
+ OSCILLATOR STRENGTH =    0.757000
+ EINSTEIN COEFFICIENTS: A=  2.5658E+10 1/SEC; B=  4.4868E+08 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  4
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.0424479535       -0.0153707022
+ EXCITATION ENERGY =  6.7578E+15 [1/SEC] =   225417.40 [1/CM] =     27.95 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000   -0.054696    1.050034    1.051458 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.139024    2.668942    2.672560 DEBYE
+ OSCILLATOR STRENGTH =    0.757000
+ EINSTEIN COEFFICIENTS: A=  2.5658E+10 1/SEC; B=  4.4868E+08 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  5
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.0424479535        0.0180156717
+ EXCITATION ENERGY =  6.9775E+15 [1/SEC] =   232744.86 [1/CM] =     28.86 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.654878    0.000000    0.000000    0.654878 E*BOHR
+ TRANSITION DIPOLE =   -1.664547    0.000000    0.000000    1.664547 DEBYE
+ OSCILLATOR STRENGTH =    0.303197
+ EINSTEIN COEFFICIENTS: A=  1.0956E+10 1/SEC; B=  1.7405E+08 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  1
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =         -0.4347781542
+                            X           Y           Z           NORM
+      STATE DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  2
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.4347781542       -0.3347558857
+ TRANSITION ENERGY =  6.5811E+14 [1/SEC] =    21952.35 [1/CM] =        2.72 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -1.711552   -0.000000   -0.000000    1.711552 E*BOHR
+ TRANSITION DIPOLE =   -4.350364   -0.000000   -0.000000    4.350364 DEBYE
+ OSCILLATOR STRENGTH =    0.195337
+ EINSTEIN COEFFICIENTS: A=  6.2791E+07 1/SEC; B=  1.1889E+09 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  3
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.4347781542       -0.0153707022
+ TRANSITION ENERGY =  2.7596E+15 [1/SEC] =    92049.30 [1/CM] =       11.41 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  6.4475E-20 1/SEC; B=  1.6558E-20 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  4
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.4347781542       -0.0153707022
+ TRANSITION ENERGY =  2.7596E+15 [1/SEC] =    92049.30 [1/CM] =       11.41 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.8357E-20 1/SEC; B=  7.2824E-21 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.4347781542        0.0180156717
+ TRANSITION ENERGY =  2.9792E+15 [1/SEC] =    99376.76 [1/CM] =       12.32 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.0160E-19 1/SEC; B=  4.1145E-20 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  2
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =         -0.3347558857
+                            X           Y           Z           NORM
+      STATE DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   2 AND  3
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.3347558857       -0.0153707022
+ TRANSITION ENERGY =  2.1015E+15 [1/SEC] =    70096.95 [1/CM] =        8.69 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.523961   -0.027293    0.524672 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -1.331787   -0.069372    1.333593 DEBYE
+ OSCILLATOR STRENGTH =    0.058614
+ EINSTEIN COEFFICIENTS: A=  1.9211E+08 1/SEC; B=  1.1172E+08 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   2 AND  4
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.3347558857       -0.0153707022
+ TRANSITION ENERGY =  2.1015E+15 [1/SEC] =    70096.95 [1/CM] =        8.69 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000    0.027293   -0.523961    0.524672 E*BOHR
+ TRANSITION DIPOLE =   -0.000000    0.069372   -1.331787    1.333593 DEBYE
+ OSCILLATOR STRENGTH =    0.058614
+ EINSTEIN COEFFICIENTS: A=  1.9211E+08 1/SEC; B=  1.1172E+08 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   2 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.3347558857        0.0180156717
+ TRANSITION ENERGY =  2.3211E+15 [1/SEC] =    77424.41 [1/CM] =        9.60 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.846304   -0.000000   -0.000000    0.846304 E*BOHR
+ TRANSITION DIPOLE =   -2.151106   -0.000000   -0.000000    2.151106 DEBYE
+ OSCILLATOR STRENGTH =    0.168444
+ EINSTEIN COEFFICIENTS: A=  6.7353E+08 1/SEC; B=  2.9068E+08 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  3
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =         -0.0153707022
+                            X           Y           Z           NORM
+      STATE DIPOLE =   -0.000000    0.000000    0.000000    0.000000 E*BOHR
+      STATE DIPOLE =   -0.000000    0.000000    0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   3 AND  4
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.0153707022       -0.0153707022
+ TRANSITION ENERGY =  1.1688E+01 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.8797E-64 1/SEC; B=  6.3538E-22 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   3 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.0153707022        0.0180156717
+ TRANSITION ENERGY =  2.1967E+14 [1/SEC] =     7327.46 [1/CM] =        0.91 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000   -0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.0530E-23 1/SEC; B=  5.3611E-21 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  4
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =         -0.0153707022
+                            X           Y           Z           NORM
+      STATE DIPOLE =   -0.000000    0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =   -0.000000    0.000000   -0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   4 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.0153707022        0.0180156717
+ TRANSITION ENERGY =  2.1967E+14 [1/SEC] =     7327.46 [1/CM] =        0.91 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.6372E-23 1/SEC; B=  8.3354E-21 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  5
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =          0.0180156717
+                            X           Y           Z           NORM
+      STATE DIPOLE =   -0.000000    0.000000    0.000000    0.000000 E*BOHR
+      STATE DIPOLE =   -0.000000    0.000000    0.000000    0.000000 DEBYE
+
+ CIS NATURAL ORBITAL OCCUPATION NUMBERS FOR EXCITED STATE    1 ARE
+  1.0000 1.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
+  0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
+  0.0000-0.0000-0.0000-0.0000-0.0000-0.0000-0.0000-0.0000
+ THERE ARE     1.0000 ELECTRONS IN PRINCIPAL CIS NATURAL ORBITALS.
+ THERE ARE     1.0000 ELECTRONS IN SECONDARY CIS NATURAL ORBITALS.
+
+          --------------------
+          CIS NATURAL ORBITALS
+          --------------------
+
+                      1          2          3          4          5
+
+                    1.0000     1.0000     0.0000     0.0000     0.0000
+
+    1  H  1  S   -0.028608   0.225386  -1.559716  -3.481308   1.794046
+    2  H  1  S    1.645003   0.269419   3.567857   3.244744   1.455311
+    3  H  1  S   -3.728847   0.087776   0.466404  -0.197289   0.142154
+    4  H  1  X   -0.000685   0.014359  -0.202023  -1.871893  -0.958476
+    5  H  1  Y   -0.000000  -0.000000   0.045036   0.075281   0.122756
+    6  H  1  Z    0.000000   0.000000   0.075946  -0.011539   0.005131
+    7  H  1  X    0.429363   0.008079   0.737390   1.774658  -0.758092
+    8  H  1  Y   -0.000000  -0.000000   0.047775   0.079860   0.130222
+    9  H  1  Z    0.000000   0.000000   0.080565  -0.012240   0.005443
+   10  H  1 XX    0.006164   0.000794   0.456953  -0.123881  -1.116286
+   11  H  1 YY   -0.003082  -0.000397  -0.024461  -0.115317   0.611876
+   12  H  1 ZZ   -0.003082  -0.000397  -0.432492   0.239199   0.504410
+   13  H  1 XY   -0.000000  -0.000000   0.020153   0.033686   0.054930
+   14  H  1 XZ    0.000000   0.000000   0.033984  -0.005163   0.002296
+   15  H  1 YZ   -0.000000  -0.000000   0.116433   0.175935   0.182842
+   16  H  2  S    0.028059   0.225455   0.610115   2.429075   1.209484
+   17  H  2  S   -1.645655   0.265411  -2.604710  -3.020589  -2.582156
+   18  H  2  S    3.728622   0.096859  -0.849958   0.288012  -0.068834
+   19  H  2  X   -0.000650  -0.014361  -1.377216  -2.040498   0.420308
+   20  H  2  Y   -0.000000  -0.000000   0.045036   0.075281   0.122756
+   21  H  2  Z    0.000000   0.000000   0.075946  -0.011539   0.005131
+   22  H  2  X    0.429382  -0.007033   1.511389   0.178277   2.305021
+   23  H  2  Y   -0.000000  -0.000000   0.047775   0.079860   0.130222
+   24  H  2  Z    0.000000   0.000000   0.080565  -0.012240   0.005443
+   25  H  2 XX   -0.006166   0.000779   0.218477   1.033106  -1.317584
+   26  H  2 YY    0.003083  -0.000389   0.094777  -0.693811   0.712525
+   27  H  2 ZZ    0.003083  -0.000389  -0.313254  -0.339295   0.605059
+   28  H  2 XY    0.000000   0.000000  -0.020153  -0.033686  -0.054930
+   29  H  2 XZ   -0.000000  -0.000000  -0.033984   0.005163  -0.002296
+   30  H  2 YZ   -0.000000  -0.000000   0.116433   0.175935   0.182842
+
+                      6          7          8          9         10
+
+                    0.0000     0.0000     0.0000     0.0000     0.0000
+
+    1  H  1  S    0.558118   0.736838   0.344687   0.109087   0.000000
+    2  H  1  S   -0.161987  29.292910   1.163674  -0.691066   0.000000
+    3  H  1  S    1.267241  -3.528905  -0.156247  -0.037616   0.000000
+    4  H  1  X    0.397172  -0.301557  -0.426232  -0.058017   0.000000
+    5  H  1  Y    0.049930  -0.138338   0.167884  -0.021279  -0.740697
+    6  H  1  Z   -0.029217   0.100436   0.069221   0.216619  -0.266281
+    7  H  1  X    1.562544   8.090940   0.579650  -0.091547   0.000000
+    8  H  1  Y    0.052967  -0.125616  -0.060148   0.078340   0.420492
+    9  H  1  Z   -0.030995   0.173953   0.027470  -0.215373   0.151167
+   10  H  1 XX    0.771887   0.248560   0.403573   0.055599   0.000000
+   11  H  1 YY   -0.219838  -0.169024  -0.274334  -0.068385   0.000000
+   12  H  1 ZZ   -0.552049  -0.079536  -0.129239   0.012786   0.000000
+   13  H  1 XY    0.022342   0.139238  -0.262903   0.120260   0.658427
+   14  H  1 XZ   -0.013074  -0.059514   0.157933   0.502999   0.236705
+   15  H  1 YZ    0.073758   0.132455   0.025005  -0.198857   0.000000
+   16  H  2  S   -1.539701  -0.619491  -0.079883   0.114195   0.000000
+   17  H  2  S   -0.409741 -29.478609  -1.628067   0.300627   0.000000
+   18  H  2  S   -0.640930   3.633389   0.422281   0.257309   0.000000
+   19  H  2  X    0.049748  -0.249844  -0.286762   0.091692   0.000000
+   20  H  2  Y    0.049930   0.032513  -0.222294   0.133326  -0.740697
+   21  H  2  Z   -0.029217   0.051555   0.146915   0.313548  -0.266281
+   22  H  2  X   -0.733468   8.047881   0.399132  -0.290819   0.000000
+   23  H  2  Y    0.052967  -0.049900  -0.233063   0.146857   0.420492
+   24  H  2  Z   -0.030995   0.152290   0.061902  -0.172417   0.151167
+   25  H  2 XX    0.844315  -0.201792  -0.265436   0.033072   0.000000
+   26  H  2 YY   -0.256052   0.056152   0.060170  -0.057121   0.000000
+   27  H  2 ZZ   -0.588263   0.145640   0.205265   0.024050   0.000000
+   28  H  2 XY   -0.022342   0.146195  -0.388948   0.138030  -0.658427
+   29  H  2 XZ    0.013074  -0.022148  -0.028133  -0.341066  -0.236705
+   30  H  2 YZ    0.073758   0.132455   0.025005  -0.198857   0.000000
+
+                     11         12         13         14         15
+
+                    0.0000     0.0000     0.0000     0.0000     0.0000
+
+    1  H  1  S    0.000000   0.162544   0.000000   0.000000   0.019775
+    2  H  1  S    0.000000   2.183561   0.000000   0.000000  -1.445826
+    3  H  1  S    0.000000  -0.666958   0.000000   0.000000   0.026890
+    4  H  1  X    0.000000   0.776542   0.000000   0.000000   0.097132
+    5  H  1  Y   -0.266281   0.122716   0.000000   0.000000   0.186142
+    6  H  1  Z    0.740697  -0.047668   0.000000   0.000000   0.175612
+    7  H  1  X    0.000000   0.208096   0.000000   0.000000  -0.381409
+    8  H  1  Y    0.151167   0.214989   0.000000   0.000000   0.073233
+    9  H  1  Z   -0.420492   0.006933   0.000000   0.000000   0.335604
+   10  H  1 XX    0.000000  -0.459821   0.000000   0.000000  -0.077289
+   11  H  1 YY    0.000000   0.264648   0.000000   1.037705   0.016769
+   12  H  1 ZZ    0.000000   0.195173   0.000000  -1.037705   0.060520
+   13  H  1 XY    0.236705  -0.331776   0.000000   0.000000   0.028303
+   14  H  1 XZ   -0.658427   0.201294   0.000000   0.000000  -0.431913
+   15  H  1 YZ    0.000000   0.072274   1.198238   0.000000  -0.222991
+   16  H  2  S    0.000000  -0.300183   0.000000   0.000000   0.142450
+   17  H  2  S    0.000000  -1.909110   0.000000   0.000000   1.163848
+   18  H  2  S    0.000000   0.506015   0.000000   0.000000   0.130149
+   19  H  2  X    0.000000   0.692509   0.000000   0.000000   0.217285
+   20  H  2  Y   -0.266281  -0.141974   0.000000   0.000000   0.079217
+   21  H  2  Z    0.740697   0.158770   0.000000   0.000000  -0.154838
+   22  H  2  X    0.000000   0.355086   0.000000   0.000000  -0.541474
+   23  H  2  Y    0.151167   0.097687   0.000000   0.000000   0.025848
+   24  H  2  Z   -0.420492   0.098420   0.000000   0.000000   0.189158
+   25  H  2 XX    0.000000   0.360059   0.000000   0.000000   0.130391
+   26  H  2 YY    0.000000  -0.145292   0.000000  -1.037705  -0.087071
+   27  H  2 ZZ    0.000000  -0.214767   0.000000   1.037705  -0.043320
+   28  H  2 XY   -0.236705  -0.110428   0.000000   0.000000  -0.206936
+   29  H  2 XZ    0.658427   0.143591   0.000000   0.000000  -0.120153
+   30  H  2 YZ    0.000000   0.072274  -1.198238   0.000000  -0.222991
+
+                     16         17         18         19         20
+
+                    0.0000     0.0000     0.0000     0.0000     0.0000
+
+    1  H  1  S    0.000000   0.000000   0.068670   0.000000   0.000000
+    2  H  1  S    0.000000   0.000000   0.624570   0.000000   0.000000
+    3  H  1  S    0.000000   0.000000  -0.049563   0.000000   0.000000
+    4  H  1  X    0.000000   0.000000  -0.099634   0.000000   0.000000
+    5  H  1  Y   -1.333275  -0.248677  -0.189528   2.265181   1.610427
+    6  H  1  Z    0.248677  -1.333275   0.168492  -1.610427   2.265181
+    7  H  1  X    0.000000   0.000000   0.215809   0.000000   0.000000
+    8  H  1  Y    1.723993   0.321552   0.343610   2.131545   1.515419
+    9  H  1  Z   -0.321552   1.723993  -0.024700  -1.515419   2.131545
+   10  H  1 XX    0.000000   0.000000   0.094654   0.000000   0.000000
+   11  H  1 YY    0.000000   0.000000  -0.056618   0.000000   0.000000
+   12  H  1 ZZ    0.000000   0.000000  -0.038035   0.000000   0.000000
+   13  H  1 XY   -0.340738  -0.063553  -0.524352   1.921299   1.365945
+   14  H  1 XZ    0.063553  -0.340738  -0.125588  -1.365945   1.921299
+   15  H  1 YZ    0.000000   0.000000   0.058444   0.000000   0.000000
+   16  H  2  S    0.000000   0.000000  -0.054233   0.000000   0.000000
+   17  H  2  S    0.000000   0.000000  -0.650013   0.000000   0.000000
+   18  H  2  S    0.000000   0.000000   0.065140   0.000000   0.000000
+   19  H  2  X    0.000000   0.000000  -0.100327   0.000000   0.000000
+   20  H  2  Y    1.333275   0.248677  -0.262524  -2.265181  -1.610427
+   21  H  2  Z   -0.248677   1.333275  -0.094908   1.610427  -2.265181
+   22  H  2  X    0.000000   0.000000   0.218311   0.000000   0.000000
+   23  H  2  Y   -1.723993  -0.321552   0.311260  -2.131545  -1.515419
+   24  H  2  Z    0.321552  -1.723993  -0.141430   1.515419  -2.131545
+   25  H  2 XX    0.000000   0.000000  -0.080128   0.000000   0.000000
+   26  H  2 YY    0.000000   0.000000   0.030773   0.000000   0.000000
+   27  H  2 ZZ    0.000000   0.000000   0.049356   0.000000   0.000000
+   28  H  2 XY   -0.340738  -0.063553   0.402403   1.921299   1.365945
+   29  H  2 XZ    0.063553  -0.340738  -0.314461  -1.365945   1.921299
+   30  H  2 YZ    0.000000   0.000000   0.058444   0.000000   0.000000
+
+                     21         22         23         24         25
+
+                    0.0000    -0.0000    -0.0000    -0.0000    -0.0000
+
+    1  H  1  S   -0.074353  -0.276020   0.106526   0.119857   0.455720
+    2  H  1  S    5.851023  25.770759   0.509667  -0.374729  -1.802890
+    3  H  1  S   -0.410803  -2.354726   0.050231   2.761705  -0.962079
+    4  H  1  X   -0.566632  -0.812743   0.566104  -0.807853   0.082548
+    5  H  1  Y   -0.087728   0.153394   0.007844  -0.059445  -0.012434
+    6  H  1  Z   -0.254824  -0.058668  -0.013922   0.013352  -0.066101
+    7  H  1  X    1.881001   7.295219  -0.726347   0.287186  -1.749321
+    8  H  1  Y    0.220092   0.053708   0.008321  -0.063061  -0.013191
+    9  H  1  Z    0.169203  -0.240075  -0.014768   0.014164  -0.070121
+   10  H  1 XX    0.269117   0.194017  -0.019370  -0.609845  -0.285109
+   11  H  1 YY   -0.161871  -0.057633  -0.172167   0.151900   0.136441
+   12  H  1 ZZ   -0.107247  -0.136384   0.191537   0.457945   0.148669
+   13  H  1 XY   -0.165216  -0.072318   0.003510  -0.026600  -0.005564
+   14  H  1 XZ   -0.032630   0.036524  -0.006230   0.005975  -0.029578
+   15  H  1 YZ   -0.195650  -0.172731  -0.076733  -0.031161   0.007166
+   16  H  2  S    0.227390   0.146556  -0.851873   1.456372   1.385800
+   17  H  2  S   -6.142978 -25.584241   0.815021  -0.785276   0.380045
+   18  H  2  S    0.577864   2.250518  -0.710540  -2.338334   1.595159
+   19  H  2  X   -0.453802  -0.850580  -0.698826  -0.137037   0.310685
+   20  H  2  Y   -0.028799  -0.014226   0.007844  -0.059445  -0.012434
+   21  H  2  Z    0.033400  -0.099102  -0.013922   0.013352  -0.066101
+   22  H  2  X    1.702686   7.293945   1.085729   1.182615   0.152937
+   23  H  2  Y    0.246208  -0.020576   0.008321  -0.063061  -0.013191
+   24  H  2  Z    0.296935  -0.257994  -0.014768   0.014164  -0.070121
+   25  H  2 XX   -0.189178  -0.240673   0.276057  -0.171707  -0.028873
+   26  H  2 YY    0.067277   0.159712  -0.319881  -0.067169   0.008323
+   27  H  2 ZZ    0.121901   0.080961   0.043824   0.238876   0.020551
+   28  H  2 XY    0.263665  -0.207715  -0.003510   0.026600   0.005564
+   29  H  2 XZ    0.514151  -0.104075   0.006230  -0.005975   0.029578
+   30  H  2 YZ   -0.195650  -0.172731  -0.076733  -0.031161   0.007166
+
+                     26         27         28
+
+                   -0.0000    -0.0000    -0.0000
+
+    1  H  1  S   -1.640146  -0.164729  -0.202302
+    2  H  1  S    0.996433   0.421396  -0.429897
+    3  H  1  S    0.050047  -0.001598   0.718982
+    4  H  1  X   -1.641063  -0.055326   0.101965
+    5  H  1  Y   -0.102173  -0.001002  -0.000129
+    6  H  1  Z    0.029553   0.000831  -0.000346
+    7  H  1  X   -0.013322  -0.255118   0.027139
+    8  H  1  Y   -0.108387  -0.001063  -0.000137
+    9  H  1  Z    0.031350   0.000882  -0.000367
+   10  H  1 XX   -0.962816   0.378008  -0.103383
+   11  H  1 YY    0.713792  -0.190939   0.051690
+   12  H  1 ZZ    0.249023  -0.187068   0.051694
+   13  H  1 XY   -0.045720  -0.000448  -0.000058
+   14  H  1 XZ    0.013224   0.000372  -0.000155
+   15  H  1 YZ   -0.167997   0.000632  -0.000006
+   16  H  2  S    2.394093  -0.790105  -0.204296
+   17  H  2  S   -1.138752   0.915979  -0.428302
+   18  H  2  S   -0.115553  -0.458552   0.716849
+   19  H  2  X   -1.223039   0.468198  -0.100712
+   20  H  2  Y   -0.102173  -0.001002  -0.000129
+   21  H  2  Z    0.029553   0.000831  -0.000346
+   22  H  2  X    0.926737   0.198742  -0.027130
+   23  H  2  Y   -0.108387  -0.001063  -0.000137
+   24  H  2  Z    0.031350   0.000882  -0.000367
+   25  H  2 XX    0.259415   0.238394  -0.103764
+   26  H  2 YY    0.102677  -0.121133   0.051880
+   27  H  2 ZZ   -0.362092  -0.117262   0.051884
+   28  H  2 XY    0.045720   0.000448   0.000058
+   29  H  2 XZ   -0.013224  -0.000372   0.000155
+   30  H  2 YZ   -0.167997   0.000632  -0.000006
+
+ THE CIS NATURAL ORBITALS HAVE BEEN PUNCHED.
+
+ ..... DONE WITH CIS ENERGY .....
+
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=        0.1 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.9 SECONDS, CPU UTILIZATION IS  10.00%
+
+     -------------------------------------------------------------
+     CIS   PROPERTIES...FOR THE WAVEFUNCTION OF EXCITED STATE    1
+                 USING THE EXPECTATION VALUE DENSITY
+     -------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =      -1.9108243092
+                TWO ELECTRON ENERGY =       0.3649350438
+           NUCLEAR REPULSION ENERGY =       1.1111111111
+                                      ------------------
+                       TOTAL ENERGY =      -0.4347781542
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =       0.3649350438
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =      -2.9144376492
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       1.1111111111
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =      -1.4383914943
+               TOTAL KINETIC ENERGY =       1.0036133400
+                 VIRIAL RATIO (V/T) =       1.4332128090
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  H  1  S      0.17783     0.11658
+              2  H  1  S     -0.02933     0.16077
+              3  H  1  S      0.60051     0.39234
+              4  H  1  X      0.00296     0.00979
+              5  H  1  Y      0.00000     0.00000
+              6  H  1  Z      0.00000     0.00000
+              7  H  1  X      0.24775     0.18215
+              8  H  1  Y      0.00000     0.00000
+              9  H  1  Z      0.00000     0.00000
+             10  H  1 XX      0.00007     0.06810
+             11  H  1 YY      0.00022     0.03513
+             12  H  1 ZZ      0.00000     0.03513
+             13  H  1 XY      0.00000     0.00000
+             14  H  1 XZ      0.00000     0.00000
+             15  H  1 YZ      0.00000     0.00000
+             16  H  2  S      0.17783     0.11658
+             17  H  2  S     -0.02933     0.16077
+             18  H  2  S      0.60051     0.39234
+             19  H  2  X      0.00296     0.00979
+             20  H  2  Y      0.00000     0.00000
+             21  H  2  Z      0.00000     0.00000
+             22  H  2  X      0.24775     0.18215
+             23  H  2  Y      0.00000     0.00000
+             24  H  2  Z      0.00000     0.00000
+             25  H  2 XX      0.00007     0.06810
+             26  H  2 YY      0.00022     0.03513
+             27  H  2 ZZ      0.00000     0.03513
+             28  H  2 XY      0.00000     0.00000
+             29  H  2 XZ      0.00000     0.00000
+             30  H  2 YZ      0.00000     0.00000
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2
+
+    1    7.3998665
+    2   -6.3998665   7.3998665
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 H             1.000000    0.000000         1.000000    0.000000
+    2 H             1.000000    0.000000         1.000000    0.000000
+
+          MULLIKEN SPHERICAL HARMONIC POPULATIONS
+       ATOM           S       P       D      F      G      H      I    TOTAL
+    1 H             0.75    0.25    0.00   0.00   0.00   0.00   0.00    1.00
+    2 H             0.75    0.25    0.00   0.00   0.00   0.00   0.00    1.00
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.450000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000   -0.000000   -0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.1 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.9 SECONDS, CPU UTILIZATION IS   9.47%
+                580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY Wed Apr 12 18:16:49 2017
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.47 + 0.60 = 0.107
+ 1: 0.25 + 0.26 = 0.52
+ 2: 0.16 + 0.39 = 0.56
+ 3: 0.18 + 0.25 = 0.44
+ 4: 0.20 + 0.42 = 0.62
+ 5: 0.21 + 0.29 = 0.51
+ 6: 0.18 + 0.37 = 0.56
+ 7: 0.17 + 0.27 = 0.44
+ 8: 0.22 + 0.42 = 0.65
+ 9: 0.18 + 0.26 = 0.44
+ 10: 0.20 + 0.32 = 0.52
+ 11: 0.23 + 0.22 = 0.46
+ 12: 0.19 + 0.37 = 0.57
+ 13: 0.16 + 0.24 = 0.41
+ 14: 0.17 + 0.33 = 0.51
+ 15: 0.21 + 0.19 = 0.41
+ ----------------------------------------
+ ddikick.x: exited gracefully.
+----- accounting info -----
+Files used on the master node kylin.physics.illinois.edu were:
+-rw-rw-r--. 1 yyang173 yyang173     331 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F05
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.001
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.002
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.003
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.004
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.005
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.006
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.007
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.008
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.009
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.010
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.011
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.012
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.013
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.014
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F08.015
+-rw-rw-r--. 1 yyang173 yyang173 1636000 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F10
+-rw-rw-r--. 1 yyang173 yyang173    1120 Apr 12 18:16 /scr/yyang173/sep0.90-cis.F12
+Wed Apr 12 18:16:52 CDT 2017
+0.258u 0.111s 0:04.43 8.1%	0+0k 0+16io 0pf+0w

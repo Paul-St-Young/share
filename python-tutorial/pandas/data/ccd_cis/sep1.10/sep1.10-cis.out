@@ -1,0 +1,974 @@
+----- GAMESS execution script 'rungms' -----
+This job is running on host kylin.physics.illinois.edu
+under operating system Linux at Mon Apr 17 23:10:09 CDT 2017
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem                    1K-blocks     Used Available Use% Mounted on
+/dev/mapper/fedora_kylin-root 110123880 60566544  44515220  58% /
+GAMESS temporary binary files will be written to /scr/yyang173
+GAMESS supplementary output files will be written to /home/yyang173/Desktop/attempts/drag-node/hf_grid/ccd_cis/sep1.10
+Copying input file sep1.10-cis.inp to your run's scratch directory...
+ 
+Assuming a single but multicore node.
+ 
+
+ Distributed Data Interface kickoff program.
+ Initiating 16 compute processes on 1 nodes to run the following command:
+ /opt/intel17/apps/gamess_2016R1/gamess.00.x sep1.10-cis 
+
+          ******************************************************
+          *         GAMESS VERSION = 18 AUG 2016 (R1)          *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          **************** 64 BIT INTEL VERSION ****************
+
+  SINCE 1993, STUDENTS AND POSTDOCS WORKING AT IOWA STATE UNIVERSITY
+  AND ALSO IN THEIR VARIOUS JOBS AFTER LEAVING ISU HAVE MADE IMPORTANT
+  CONTRIBUTIONS TO THE CODE:
+     IVANA ADAMOVIC, CHRISTINE AIKENS, YURI ALEXEEV, POOJA ARORA,
+     ANDREY ASADCHEV, ROB BELL, PRADIPTA BANDYOPADHYAY, JONATHAN BENTZ,
+     BRETT BODE, KURT BRORSEN, CALEB CARLIN, GALINA CHABAN, WEI CHEN,
+     CHEOL HO CHOI, PAUL DAY, ALBERT DEFUSCO, NUWAN DESILVA, TIM DUDLEY,
+     DMITRI FEDOROV, GRAHAM FLETCHER, MARK FREITAG, KURT GLAESEMANN,
+     DAN KEMP, GRANT MERRILL, NORIYUKI MINEZAWA, JONATHAN MULLIN,
+     TAKESHI NAGATA, SEAN NEDD, HEATHER NETZLOFF, BOSILJKA NJEGIC, RYAN OLSON,
+     MIKE PAK, SPENCER PRUITT, LUKE ROSKOP, JIM SHOEMAKER, LYUDMILA SLIPCHENKO,
+     TONY SMITH, SAROM SOK LEANG, JIE SONG, TETSUYA TAKETSUGU, SIMON WEBB,
+     PENG XU, SOOHAENG YOO, FEDERICO ZAHARIEV
+
+  ADDITIONAL CODE HAS BEEN PROVIDED BY COLLABORATORS IN OTHER GROUPS:
+     IOWA STATE UNIVERSITY:
+          JOE IVANIC, AARON WEST, LAIMUTIS BYTAUTAS, KLAUS RUEDENBERG
+     UNIVERSITY OF TOKYO: KIMIHIKO HIRAO, TAKAHITO NAKAJIMA,
+          TAKAO TSUNEDA, MUNEAKI KAMIYA, SUSUMU YANAGISAWA,
+          KIYOSHI YAGI, MAHITO CHIBA, SEIKEN TOKURA, NAOAKI KAWAKAMI
+     UNIVERSITY OF AARHUS: FRANK JENSEN
+     UNIVERSITY OF IOWA: VISVALDAS KAIRYS, HUI LI
+     NATIONAL INST. OF STANDARDS AND TECHNOLOGY: WALT STEVENS, DAVID GARMER
+     UNIVERSITY OF PISA: BENEDETTA MENNUCCI, JACOPO TOMASI
+     UNIVERSITY OF MEMPHIS: HENRY KURTZ, PRAKASHAN KORAMBATH
+     UNIVERSITY OF ALBERTA: TOBY ZENG, MARIUSZ KLOBUKOWSKI
+     UNIVERSITY OF NEW ENGLAND: MARK SPACKMAN
+     MIE UNIVERSITY: HIROAKI UMEDA
+     NAT. INST. OF ADVANCED INDUSTRIAL SCIENCE AND TECHNOLOGY: KAZUO KITAURA
+     MICHIGAN STATE UNIVERSITY:
+          KAROL KOWALSKI, MARTA WLOCH, JEFFREY GOUR, JESSE LUTZ,
+          WEI LI, PIOTR PIECUCH
+     UNIVERSITY OF SILESIA: MONIKA MUSIAL, STANISLAW KUCHARSKI
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX:
+          OLIVIER QUINET, BENOIT CHAMPAGNE
+     UNIVERSITY OF CALIFORNIA - SANTA BARBARA: BERNARD KIRTMAN
+     INSTITUTE FOR MOLECULAR SCIENCE:
+          KAZUYA ISHIMURA, MICHIO KATOUDA, AND SHIGERU NAGASE
+     UNIVERSITY OF NOTRE DAME: ANNA POMOGAEVA, DAN CHIPMAN
+     KYUSHU UNIVERSITY:
+          HARUYUKI NAKANO,
+          FENG LONG GU, JACEK KORCHOWIEC, MARCIN MAKOWSKI, AND YURIKO AOKI,
+          HIROTOSHI MORI AND EISAKU MIYOSHI
+     PENNSYLVANIA STATE UNIVERSITY:
+          TZVETELIN IORDANOV, CHET SWALINA, JONATHAN SKONE,
+          SHARON HAMMES-SCHIFFER
+     WASEDA UNIVERSITY:
+          MASATO KOBAYASHI, TOMOKO AKAMA, TSUGUKI TOUMA,
+          TAKESHI YOSHIKAWA, YASUHIRO IKABATA, JUNJI SEINO,
+          YUYA NAKAJIMA, HIROMI NAKAI
+     NANJING UNIVERSITY: SHUHUA LI
+     UNIVERSITY OF NEBRASKA:
+          PEIFENG SU, DEJUN SI, NANDUN THELLAMUREGE, YALI WANG, HUI LI
+     UNIVERSITY OF ZURICH: ROBERTO PEVERATI, KIM BALDRIDGE
+     N. COPERNICUS UNIVERSITY AND JACKSON STATE UNIVERSITY:
+          MARIA BARYSZ
+     UNIVERSITY OF COPENHAGEN: Jimmy Kromann, CASPER STEINMANN
+     TOKYO INSTITUTE OF TECHNOLOGY: HIROYA NAKATA
+     NAGOYA UNIVERSITY: YOSHIO NISHIMOTO, STEPHAN IRLE
+     MOSCOW STATE UNIVERSITY: VLADIMIR MIRONOV
+
+
+ PARALLEL VERSION RUNNING ON       16 PROCESSORS IN        1 NODES.
+
+ EXECUTION OF GAMESS BEGUN Mon Apr 17 23:10:09 2017
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $contrl coord=unique icharg=0 ispher=1 mult=1 runtyp=energy                    
+ INPUT CARD>         scftyp=rhf cityp=cis units=bohr  $end                                  
+ INPUT CARD> $basis  gbasis=ccd  $end                                                       
+ INPUT CARD> $guess  guess=huckel  $end                                                     
+ INPUT CARD> $cis    nstate=5 $end                                                          
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>A molecule.                                                                     
+ INPUT CARD>C1                                                                              
+ INPUT CARD>H 1.00       0.00000000       0.00000000       0.00000000                       
+ INPUT CARD>H 1.00       1.100000000       0.00000000       0.00000000                      
+ INPUT CARD> $END                                                                           
+    1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=CCD          IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ A molecule.                                                                     
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ H           1.0     0.0000000000        0.0000000000        0.0000000000
+ H           1.0     1.1000000000        0.0000000000        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 H          2 H     
+
+   1 H       0.0000000    0.5820950 *
+   2 H       0.5820950 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ H         
+
+      1   S       1            13.0100000    0.033498726390
+      1   S       2             1.9620000    0.234800801174
+      1   S       3             0.4446000    0.813682957883
+
+      2   S       4             0.1220000    1.000000000000
+
+      3   P       5             0.7270000    1.000000000000
+
+ H         
+
+      4   S       6            13.0100000    0.033498726390
+      4   S       7             1.9620000    0.234800801174
+      4   S       8             0.4446000    0.813682957883
+
+      5   S       9             0.1220000    1.000000000000
+
+      6   P      10             0.7270000    1.000000000000
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    6
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   10
+ NOTE: THIS RUN WILL RESTRICT THE MO VARIATION SPACE TO SPHERICAL HARMONICS.
+ THE NUMBER OF ORBITALS KEPT IN THE VARIATIONAL SPACE WILL BE PRINTED LATER.
+ NUMBER OF ELECTRONS                          =    2
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    1
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    1
+ TOTAL NUMBER OF ATOMS                        =    2
+ THE NUCLEAR REPULSION ENERGY IS        0.9090909091
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR,
+ ORBITAL LZ DEGENERACY TOLERANCE ETOLLZ= 1.00E-06
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=ENERGY       EXETYP=RUN     
+ MPLEVL=       0     CITYP =CIS          CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=       1     NOSYM =       0     MAXIT =      30     UNITS =BOHR    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER  16 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= T  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    10     2     1
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTOFF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------
+     CI-SINGLES CONTROL INFORMATION
+     ------------------------------
+     NACORE =        0  NBCORE   =        0
+     NSTATE =        5  IROOT    =        1
+     HAMTYP = SAPS      SAP MULT =        1
+     DIAGZN = DAVID     MXVEC    =       40
+     NDAVIT =       50  DAVCVG   = 1.00E-05
+     CISPRP =        F  NGSVEC   =       10
+     MNMEDG =        F  MNMEOP   =        F
+     CHFSLV = CONJG     RDCISV   =        F
+     DGAPRX =        T
+
+     NUMBER OF CORE -A-  ORBITALS =     0
+     NUMBER OF CORE -B-  ORBITALS =     0
+     NUMBER OF OCC. -A-  ORBITALS =     1
+     NUMBER OF OCC. -B-  ORBITALS =     1
+     NUMBER OF MOLECULAR ORBITALS =    10
+     NUMBER OF   BASIS  FUNCTIONS =    10
+
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+ -- VARIATIONAL SPACE WILL BE RESTRICTED TO PURE SPHERICAL HARMONICS ONLY --
+ AFTER EXCLUDING CONTAMINANT COMBINATIONS FROM THE CARTESIAN GAUSSIAN BASIS
+ SET, THE NUMBER OF SPHERICAL HARMONICS KEPT IN THE VARIATION SPACE IS   10
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   10
+
+ ..... DONE SETTING UP THE RUN .....
+ CPU     0: STEP CPU TIME=     0.01 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.0 SECONDS, CPU UTILIZATION IS  25.00%
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.2 SECONDS, CPU UTILIZATION IS   5.56%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      2162 WORDS.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     1 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A        7=A   
+     8=A        9=A       10=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.3 SECONDS, CPU UTILIZATION IS   3.85%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   89377 WORDS OF MEMORY.
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =   31
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 512
+         16 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.4 SECONDS, CPU UTILIZATION IS   8.11%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         0.9090909091
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=T
+     DENSITY MATRIX CONV=  1.00E-06
+     SOSCF WILL OPTIMIZE       9 ORBITAL ROTATIONS, SOGTOL=   0.250
+     MEMORY REQUIRED FOR RHF ITERS=     30876 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+   1  0  0       -1.0949878729    -1.0949878729   0.022307682   0.000000000
+          ---------------START SECOND ORDER SCF---------------
+   2  1  0       -1.0999100956    -0.0049222227   0.004426780   0.011586171
+   3  2  0       -1.1000261144    -0.0001160188   0.001070681   0.001814008
+   4  3  0       -1.1000293042    -0.0000031898   0.000044413   0.000044270
+   5  4  0       -1.1000293086    -0.0000000044   0.000008427   0.000007748
+   6  5  0       -1.1000293087    -0.0000000001   0.000000009   0.000000023
+   7  6  0       -1.1000293087    -0.0000000000   0.000000000   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS       -1.1000293087 AFTER   7 ITERATIONS
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     4 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     5 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    7) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    7) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    8) HAS LZ(WEIGHT)= 0.00(100.0%) 
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -0.6454     0.2256     0.4412     1.0760     1.3168
+                     A          A          A          A          A   
+    1  H  1  S    0.422499   0.118610  -0.650115   0.562976   0.000000
+    2  H  1  S    0.135074   2.547707   0.721344  -1.748166   0.000000
+    3  H  1  X    0.026495   0.014928   0.018216  -0.504265   0.000000
+    4  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.533382
+    5  H  1  Z    0.000000   0.000000   0.000000   0.000000   0.140047
+    6  H  2  S    0.422499  -0.118610  -0.650115  -0.562976   0.000000
+    7  H  2  S    0.135074  -2.547707   0.721344   1.748166   0.000000
+    8  H  2  X   -0.026495   0.014928  -0.018216  -0.504265   0.000000
+    9  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.533382
+   10  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.140047
+
+                      6          7          8          9         10
+                    1.3168     2.0916     2.1499     2.1499     4.9971
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.470354   0.000000   0.000000   4.584714
+    2  H  1  S    0.000000  -0.233812   0.000000   0.000000  -0.359703
+    3  H  1  X    0.000000  -0.865536   0.000000   0.000000   2.355294
+    4  H  1  Y   -0.140047   0.000000   0.782549   0.890323   0.000000
+    5  H  1  Z    0.533382   0.000000   0.890323  -0.782549   0.000000
+    6  H  2  S    0.000000   0.470354   0.000000   0.000000  -4.584714
+    7  H  2  S    0.000000  -0.233812   0.000000   0.000000   0.359703
+    8  H  2  X    0.000000   0.865536   0.000000   0.000000   2.355294
+    9  H  2  Y   -0.140047   0.000000  -0.782549  -0.890323   0.000000
+   10  H  2  Z    0.533382   0.000000  -0.890323   0.782549   0.000000
+ ...... END OF RHF CALCULATION ......
+ CPU     0: STEP CPU TIME=     0.01 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.9 SECONDS, CPU UTILIZATION IS   4.26%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =      -2.7275248798
+                TWO ELECTRON ENERGY =       0.7184046620
+           NUCLEAR REPULSION ENERGY =       0.9090909091
+                                      ------------------
+                       TOTAL ENERGY =      -1.1000293087
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =       0.7184046620
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =      -3.9891236607
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       0.9090909091
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =      -2.3616280896
+               TOTAL KINETIC ENERGY =       1.2615987809
+                 VIRIAL RATIO (V/T) =       1.8719327614
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=     -1.2907155558
+          BARE H ENERGY=     -2.7275248798
+     ELECTRONIC ENERGY =     -2.0091202178
+         KINETIC ENERGY=      1.2615987809
+          N-N REPULSION=      0.9090909091
+           TOTAL ENERGY=     -1.1000293087
+        SIGMA PART(1+2)=     -2.0091202178
+               (K,V1,2)=      1.2615987809     -3.9891236607      0.7184046620
+           PI PART(1+2)=      0.0000000000
+               (K,V1,2)=      0.0000000000      0.0000000000      0.0000000000
+  SIGMA SKELETON, ERROR=     -1.1000293087      0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  H  1  S      0.76650     0.64870
+              2  H  1  S      0.21898     0.31483
+              3  H  1  X      0.01452     0.03647
+              4  H  1  Y      0.00000     0.00000
+              5  H  1  Z      0.00000     0.00000
+              6  H  2  S      0.76650     0.64870
+              7  H  2  S      0.21898     0.31483
+              8  H  2  X      0.01452     0.03647
+              9  H  2  Y      0.00000     0.00000
+             10  H  2  Z      0.00000     0.00000
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2
+
+    1    0.5512408
+    2    0.4487592   0.5512408
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 H             1.000000    0.000000         1.000000    0.000000
+    2 H             1.000000    0.000000         1.000000    0.000000
+
+          MULLIKEN SPHERICAL HARMONIC POPULATIONS
+       ATOM           S       P       D      F      G      H      I    TOTAL
+    1 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+    2 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.550000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000    0.000000    0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        1.0 SECONDS, CPU UTILIZATION IS   3.96%
+
+ MXVEC CANNOT BE BIGGER THAN THE NUMBER OF CIS CONFIGS
+ SETTING MXVEC = NCFG
+
+
+          ---------------------------------------------
+             ATOMIC ORBITAL BASIS CI-SINGLES ENERGY
+             PROGRAM WRITTEN BY SIMON P. WEBB
+          ---------------------------------------------
+
+ # CORE ORBITALS      =    0
+ # OCCUPIED ORBITALS  =    1
+ # MOLECULAR ORBITALS =   10
+ # BASIS FUNCTIONS    =   10
+
+ NUMBER OF CIS SPIN-ADAPTED ANTISYMMETRIZED PRODUCTS (SAPS) IS       9
+
+ APPROXIMATING CIS HAMILTONIAN DIAGONAL ELEMENTS USING ONLY ORBITAL ENERGIES
+
+ -CIS- HAM. DIAGONAL ELEMENTS  TOOK      0.000 SECONDS
+
+ MIN MEMORY REQ. FOR CIS ENERGY FOCK-LIKE BUILDS =       200 WORDS
+ MEMORY REQ. FOR SINGLE BATCH BUILDS             =      1800 WORDS
+ MEMORY AVAILABLE                                =    968641 WORDS
+
+ SINGLE BATCH ENERGY CALCULATION WILL BE PERFORMED
+
+ UNIT VECTOR GUESS AT CIS COEFFICIENTS ...
+
+ USING IN MEMORY DIAGONALIZTION TO FIND CIS EIGENVALUES AND EIGENVECTORS ...
+
+ STATE    1 ENERGY=       -0.5217568817
+ STATE    2 ENERGY=       -0.3047356829
+ STATE    3 ENERGY=        0.2461505960
+ STATE    4 ENERGY=        0.4417753529
+ STATE    5 ENERGY=        0.4417753529
+
+
+        --------------------------------------------------------
+        RESULTS FROM SPIN-ADAPTED ANTISYMMETRIZED PRODUCT (SAPS)
+        BASED ATOMIC ORBITAL CI-SINGLES ENERGY CALCULATION
+        --------------------------------------------------------
+
+ PRINTING CIS COEFFICIENTS LARGER THAN  0.050000
+
+ RHF REFERENCE ENERGY  =        -1.1000293087
+
+
+ EXCITED STATE   1  ENERGY=        -0.5217568817  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          2                   0.99986510
+          ----------------------------------------------
+
+
+ EXCITED STATE   2  ENERGY=        -0.3047356829  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          3                  -0.99999867
+          ----------------------------------------------
+
+
+ EXCITED STATE   3  ENERGY=         0.2461505960  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          4                   0.99985848
+          ----------------------------------------------
+
+
+ EXCITED STATE   4  ENERGY=         0.4417753529  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          5                  -0.95795745
+             1          6                  -0.28691031
+          ----------------------------------------------
+
+
+ EXCITED STATE   5  ENERGY=         0.4417753529  S = 0.0  SPACE SYM = A   
+
+          ----------------------------------------------
+          SINGLE EXCITATION               SAP COEFFICENT
+          FROM MO     TO MO
+          ----------------------------------------------
+             1          5                  -0.28691031
+             1          6                   0.95795745
+          ----------------------------------------------
+
+  ---------------------------------------------------------------------
+                    CI-SINGLES EXCITATION ENERGIES
+  STATE       HARTREE        EV      KCAL/MOL       CM-1         NM
+  ---------------------------------------------------------------------
+   1A     0.5782724271    15.7356    362.8715     126916.13      78.79
+   1A     0.7952936258    21.6410    499.0544     174546.78      57.29
+   1A     1.3461799047    36.6314    844.7408     295452.34      33.85
+   1A     1.5418046617    41.9546    967.4972     338387.01      29.55
+   1A     1.5418046617    41.9546    967.4972     338387.01      29.55
+
+ -CIS- ENERGY                  TOOK      0.010 SECONDS
+
+  ---------------------------------------------------------------------
+                    CIS TRANSITION DIPOLE MOMENTS AND
+                    EXPECTATION VALUES OF DIPOLE MOMENTS
+  ---------------------------------------------------------------------
+
+ GROUND STATE (SCF) DIPOLE=     0.000000     0.000000     0.000000 DEBYE
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  1
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.1000293087       -0.5217568817
+ EXCITATION ENERGY =  3.8048E+15 [1/SEC] =   126916.13 [1/CM] =     15.74 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -1.129683   -0.000000    0.000000    1.129683 E*BOHR
+ TRANSITION DIPOLE =   -2.871390   -0.000000    0.000000    2.871390 DEBYE
+ OSCILLATOR STRENGTH =    0.491988
+ EINSTEIN COEFFICIENTS: A=  5.2861E+09 1/SEC; B=  5.1793E+08 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  2
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.1000293087       -0.3047356829
+ EXCITATION ENERGY =  5.2328E+15 [1/SEC] =   174546.78 [1/CM] =     21.64 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.1425E-21 1/SEC; B=  1.1837E-22 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  3
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.1000293087        0.2461505960
+ EXCITATION ENERGY =  8.8574E+15 [1/SEC] =   295452.34 [1/CM] =     36.63 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.570818    0.000000   -0.000000    0.570818 E*BOHR
+ TRANSITION DIPOLE =   -1.450886    0.000000   -0.000000    1.450886 DEBYE
+ OSCILLATOR STRENGTH =    0.292420
+ EINSTEIN COEFFICIENTS: A=  1.7027E+10 1/SEC; B=  1.3224E+08 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  4
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.1000293087        0.4417753529
+ EXCITATION ENERGY =  1.0145E+16 [1/SEC] =   338387.01 [1/CM] =     41.95 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.812842   -0.495866    0.952153 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -2.066055   -1.260375    2.420150 DEBYE
+ OSCILLATOR STRENGTH =    0.931862
+ EINSTEIN COEFFICIENTS: A=  7.1175E+10 1/SEC; B=  3.6793E+08 SEC/G
+
+ TRANSITION FROM THE GROUND STATE TO EXCITED STATE  5
+
+ STATE MULTIPLICITIES =   1  1
+ STATE ENERGIES =         -1.1000293087        0.4417753529
+ EXCITATION ENERGY =  1.0145E+16 [1/SEC] =   338387.01 [1/CM] =     41.95 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000   -0.495866    0.812842    0.952153 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -1.260375    2.066055    2.420150 DEBYE
+ OSCILLATOR STRENGTH =    0.931862
+ EINSTEIN COEFFICIENTS: A=  7.1175E+10 1/SEC; B=  3.6793E+08 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  1
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =         -0.5217568817
+                            X           Y           Z           NORM
+      STATE DIPOLE =   -0.000000    0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =   -0.000000    0.000000   -0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  2
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.5217568817       -0.3047356829
+ TRANSITION ENERGY =  1.4279E+15 [1/SEC] =    47630.65 [1/CM] =        5.91 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    1.429456    0.000000   -0.000000    1.429456 E*BOHR
+ TRANSITION DIPOLE =    3.633341    0.000000   -0.000000    3.633341 DEBYE
+ OSCILLATOR STRENGTH =    0.295633
+ EINSTEIN COEFFICIENTS: A=  4.4738E+08 1/SEC; B=  8.2927E+08 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  3
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.5217568817        0.2461505960
+ TRANSITION ENERGY =  5.0526E+15 [1/SEC] =   168536.21 [1/CM] =       20.90 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =   -0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  9.5959E-20 1/SEC; B=  4.0150E-21 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  4
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.5217568817        0.4417753529
+ TRANSITION ENERGY =  6.3397E+15 [1/SEC] =   211470.88 [1/CM] =       26.22 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.9529E-20 1/SEC; B=  6.2544E-22 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   1 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.5217568817        0.4417753529
+ TRANSITION ENERGY =  6.3397E+15 [1/SEC] =   211470.88 [1/CM] =       26.22 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.000000   -0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.9713E-20 1/SEC; B=  6.2934E-22 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  2
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =         -0.3047356829
+                            X           Y           Z           NORM
+      STATE DIPOLE =    0.000000   -0.000000    0.000000    0.000000 E*BOHR
+      STATE DIPOLE =    0.000000   -0.000000    0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   2 AND  3
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.3047356829        0.2461505960
+ TRANSITION ENERGY =  3.6247E+15 [1/SEC] =   120905.56 [1/CM] =       14.99 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =   -0.877743    0.000000   -0.000000    0.877743 E*BOHR
+ TRANSITION DIPOLE =   -2.231018    0.000000   -0.000000    2.231018 DEBYE
+ OSCILLATOR STRENGTH =    0.282948
+ EINSTEIN COEFFICIENTS: A=  2.7590E+09 1/SEC; B=  3.1267E+08 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   2 AND  4
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.3047356829        0.4417753529
+ TRANSITION ENERGY =  4.9118E+15 [1/SEC] =   163840.23 [1/CM] =       20.31 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000    0.106674    0.065075    0.124956 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.271139    0.165406    0.317609 DEBYE
+ OSCILLATOR STRENGTH =    0.007771
+ EINSTEIN COEFFICIENTS: A=  1.3914E+08 1/SEC; B=  6.3368E+06 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   2 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =         -0.3047356829        0.4417753529
+ TRANSITION ENERGY =  4.9118E+15 [1/SEC] =   163840.23 [1/CM] =       20.31 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000    0.065075   -0.106674    0.124956 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.165406   -0.271139    0.317609 DEBYE
+ OSCILLATOR STRENGTH =    0.007771
+ EINSTEIN COEFFICIENTS: A=  1.3914E+08 1/SEC; B=  6.3368E+06 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  3
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =          0.2461505960
+                            X           Y           Z           NORM
+      STATE DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   3 AND  4
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =          0.2461505960        0.4417753529
+ TRANSITION ENERGY =  1.2871E+15 [1/SEC] =    42934.67 [1/CM] =        5.32 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000    0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.0155E-23 1/SEC; B=  7.6317E-23 SEC/G
+
+ TRANSITION BETWEEN EXCITED STATES   3 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =          0.2461505960        0.4417753529
+ TRANSITION ENERGY =  1.2871E+15 [1/SEC] =    42934.67 [1/CM] =        5.32 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000    0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.4437E-23 1/SEC; B=  6.1844E-23 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  4
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =          0.4417753529
+                            X           Y           Z           NORM
+      STATE DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 DEBYE
+
+ TRANSITION BETWEEN EXCITED STATES   4 AND  5
+
+ STATE MULTIPLICITIES=  1  1
+ STATE ENERGIES =          0.4417753529        0.4417753529
+ TRANSITION ENERGY =  7.3049E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                            X           Y           Z           NORM
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000   -0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.1997E-65 1/SEC; B=  1.6610E-22 SEC/G
+
+ EXPECTATION VALUE DIPOLE MOMENT FOR EXCITED STATE  5
+
+ STATE MULTIPLICITY =   1
+ STATE ENERGY =          0.4417753529
+                            X           Y           Z           NORM
+      STATE DIPOLE =    0.000000    0.000000   -0.000000    0.000000 E*BOHR
+      STATE DIPOLE =    0.000000    0.000000   -0.000000    0.000000 DEBYE
+
+ CIS NATURAL ORBITAL OCCUPATION NUMBERS FOR EXCITED STATE    1 ARE
+  1.0000 1.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000-0.0000-0.0000
+ THERE ARE     1.0000 ELECTRONS IN PRINCIPAL CIS NATURAL ORBITALS.
+ THERE ARE     1.0000 ELECTRONS IN SECONDARY CIS NATURAL ORBITALS.
+
+          --------------------
+          CIS NATURAL ORBITALS
+          --------------------
+
+                      1          2          3          4          5
+
+                    1.0000     1.0000     0.0000     0.0000     0.0000
+
+    1  H  1  S    0.113686  -0.422499   0.290726  -0.246625  -0.256808
+    2  H  1  S    2.520248  -0.135074  -0.029451  -0.000335   1.761887
+    3  H  1  X   -0.000401  -0.026495   0.140832   0.817564   0.658962
+    4  H  1  Y    0.000000   0.000000  -0.363265   0.002311   0.000000
+    5  H  1  Z    0.000000   0.000000  -0.413451  -0.006100   0.000000
+    6  H  2  S   -0.113686  -0.422499  -0.287997  -0.246625   0.256808
+    7  H  2  S   -2.520248  -0.135074   0.029455  -0.000335  -1.761887
+    8  H  2  X   -0.000401   0.026495   0.149880  -0.817564   0.658962
+    9  H  2  Y    0.000000   0.000000  -0.363265   0.002311   0.000000
+   10  H  2  Z    0.000000   0.000000  -0.413451  -0.006100   0.000000
+
+                      6          7          8          9         10
+
+                    0.0000     0.0000     0.0000    -0.0000    -0.0000
+
+    1  H  1  S    0.000000   0.000000  -0.002577   4.602957   0.763577
+    2  H  1  S    0.000000   0.000000  -0.000004  -0.468529  -0.758291
+    3  H  1  X    0.000000   0.000000   0.008543   2.312547  -0.284569
+    4  H  1  Y    0.694137   0.960849  -0.414272   0.022836  -0.000000
+    5  H  1  Z    0.960849  -0.694137   0.363944   0.025991   0.000000
+    6  H  2  S    0.000000   0.000000  -0.002577  -4.603129   0.763577
+    7  H  2  S    0.000000   0.000000  -0.000004   0.468528  -0.758291
+    8  H  2  X    0.000000   0.000000  -0.008543   2.311978   0.284569
+    9  H  2  Y   -0.694137  -0.960849  -0.414272   0.022836  -0.000000
+   10  H  2  Z   -0.960849   0.694137   0.363944   0.025991   0.000000
+
+ THE CIS NATURAL ORBITALS HAVE BEEN PUNCHED.
+
+ ..... DONE WITH CIS ENERGY .....
+
+ CPU     0: STEP CPU TIME=     0.01 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        1.2 SECONDS, CPU UTILIZATION IS   4.07%
+
+     -------------------------------------------------------------
+     CIS   PROPERTIES...FOR THE WAVEFUNCTION OF EXCITED STATE    1
+                 USING THE EXPECTATION VALUE DENSITY
+     -------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =      -1.8544812040
+                TWO ELECTRON ENERGY =       0.4236334132
+           NUCLEAR REPULSION ENERGY =       0.9090909091
+                                      ------------------
+                       TOTAL ENERGY =      -0.5217568817
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =       0.4236334132
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =      -2.8136465614
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       0.9090909091
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =      -1.4809222391
+               TOTAL KINETIC ENERGY =       0.9591653574
+                 VIRIAL RATIO (V/T) =       1.5439696895
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  H  1  S      0.40909     0.36267
+              2  H  1  S      0.58349     0.53530
+              3  H  1  X      0.00742     0.10202
+              4  H  1  Y      0.00000     0.00000
+              5  H  1  Z      0.00000     0.00000
+              6  H  2  S      0.40909     0.36267
+              7  H  2  S      0.58349     0.53530
+              8  H  2  X      0.00742     0.10202
+              9  H  2  Y      0.00000     0.00000
+             10  H  2  Z      0.00000     0.00000
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2
+
+    1    7.0326434
+    2   -6.0326434   7.0326434
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 H             1.000000    0.000000         1.000000    0.000000
+    2 H             1.000000    0.000000         1.000000    0.000000
+
+          MULLIKEN SPHERICAL HARMONIC POPULATIONS
+       ATOM           S       P       D      F      G      H      I    TOTAL
+    1 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+    2 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.550000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.000000    0.000000   -0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        1.3 SECONDS, CPU UTILIZATION IS   3.91%
+                580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY Mon Apr 17 23:10:11 2017
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.24 + 0.34 = 0.59
+ 1: 0.08 + 0.16 = 0.25
+ 2: 0.06 + 0.23 = 0.30
+ 3: 0.08 + 0.18 = 0.27
+ 4: 0.07 + 0.27 = 0.35
+ 5: 0.08 + 0.16 = 0.25
+ 6: 0.09 + 0.21 = 0.31
+ 7: 0.06 + 0.17 = 0.23
+ 8: 0.07 + 0.29 = 0.37
+ 9: 0.07 + 0.15 = 0.22
+ 10: 0.09 + 0.20 = 0.29
+ 11: 0.11 + 0.10 = 0.21
+ 12: 0.09 + 0.23 = 0.33
+ 13: 0.10 + 0.14 = 0.24
+ 14: 0.09 + 0.20 = 0.29
+ 15: 0.07 + 0.16 = 0.23
+ ----------------------------------------
+ ddikick.x: exited gracefully.
+----- accounting info -----
+Files used on the master node kylin.physics.illinois.edu were:
+-rw-rw-r--. 1 yyang173 yyang173     331 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F05
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.001
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.002
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.003
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.004
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.005
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.006
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.007
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.008
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.009
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.010
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.011
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.012
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.013
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.014
+-rw-rw-r--. 1 yyang173 yyang173  180016 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F08.015
+-rw-rw-r--. 1 yyang173 yyang173 1636000 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F10
+-rw-rw-r--. 1 yyang173 yyang173     400 Apr 17 23:10 /scr/yyang173/sep1.10-cis.F12
+Mon Apr 17 23:10:14 CDT 2017
+0.173u 0.054s 0:04.75 4.6%	0+0k 0+16io 0pf+0w
