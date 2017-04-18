@@ -101,8 +101,8 @@ if __name__ == '__main__':
     path_mean= np.mean(all_paths,axis=1)
     path_sig = np.std(all_paths,axis=1)
     fig,ax = plt.subplots(1,1)
-    ax.set_xlabel('x')
-    ax.set_ylabel('t')
+    ax.set_xlabel('x',fontsize=16)
+    ax.set_ylabel('t',fontsize=16)
     ax.errorbar(path_mean,tau*np.arange(nslice)
         ,xerr=path_sig/np.sqrt(nsample-nequil)
         ,fmt='.-',label='sampled path')
@@ -112,6 +112,7 @@ if __name__ == '__main__':
     print(action0,act_mean,'+-',act_error)
     ax.set_xlim(-1,1)
     ax.legend()
+    #fig.savefig('classical_path.png',dpi=200)
     plt.show()
 
 # end __main__
