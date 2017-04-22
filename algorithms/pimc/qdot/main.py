@@ -2,27 +2,26 @@
 import numpy as np
 from copy import deepcopy
 from path import Path
+from input_manager import InputManager
 
 def harmonic(x,lam,omega):
     return omega*omega*x*x/(4.*lam)
 
 if __name__ == '__main__':
 
-    lam = 0.5
-    omega = 20.
+    # parse inputs
+    inp_manager = InputManager()
+    cmd_inp = inp_manager.parse_command_line()
+    args = inp_manager.parse_command_line()
+    # print vars(args) # see what variables have been read
+    globals().update(vars(args))
+    tau = beta/nslice
 
-    tau = 0.1
-    sig = 0.2
-    nslice = 10
-    nptcl  = 1
-    ndim   = 1
+    # initialize path
     path = Path( tau,lam=lam,nslice=nslice,nptcl=nptcl,ndim=ndim)
     path.set_ext_potential(lambda x:harmonic(x,lam,omega)) 
     path.set_int_potential()
     old_action = path.action(from_scratch=True)
-
-    nsample = 1000 # number of samples to gather
-    block_size = 10 # number of steps in between collecting statistics
 
     x2 = np.zeros(nsample)
     path_trace = np.zeros([nsample,nslice,nptcl,ndim])
