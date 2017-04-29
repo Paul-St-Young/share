@@ -9,7 +9,8 @@ class Path:
         self._nptcl  = nptcl
         self._ndim   = ndim
 
-        self.confs = np.zeros([nslice,nptcl,ndim])
+        #self.confs = np.zeros([nslice,nptcl,ndim])
+        self.confs = np.random.randn(nslice,nptcl,ndim)
         if confs is not None:
             if self.confs.shape != confs.shape:
                 raise RuntimeError('given path has wrong shape %s, expected nslice,nptcl,ndim=%s' % (confs.shape,self.confs.shape) )
@@ -25,7 +26,7 @@ class Path:
     def __str__(self):
         return str(self.confs)
 
-    # give path access to potential
+    # give path access to a function to evaluate the potential energy of a configuration
     def _validate_potential_function(self,function):
         return_val = function(self.confs[0])
         allowed_types = set([float,np.float64,np.float32])
@@ -43,11 +44,36 @@ class Path:
             self.int_pot = lambda x:0.0 # free particle
         self._validate_potential_function(self.int_pot)
 
-    # give path access to kinetic
+    # give path access to kinetic action
+    def kinetic_action(self,iconf,jconf):
+        """ calculate kinetic action from iconf to jconf 
+          this is the exact action for free particles """
+        # self.confs[iconf] has shape (nptcl,ndim)
+        #  axis=1, apply to ndim
+
+        # for identical particles
+        #dx2 = np.linalg.norm(self.confs[jconf]-self.confs[iconf],axis=1)**2.
+        # dx2 has shape (nptcl), stores (R-R')^2 for each particle
+        #return dx2.sum()/(4.*self._lam*self._tau)
+
+        # for fermions
+        rho_mat = np.zeros([self._nptcl,self._nptcl]) # build the free particle density matrix for nptcl identical fermions
+        for i in range(self._nptcl):
+            for j in range(self._nptcl):
+                ri = self.confs[iconf,i]
+                rj = self.confs[jconf,j]
+                rho_mat[i,j] = np.exp( -np.linalg.norm(ri-rj)**2./(
+                        4.*self._lam*self._tau) )
+            # end for j
+        # end for i
+        det_val = np.linalg.det(rho_mat) 
+        if det_val < 0:
+            raise RuntimeError('determinant is negative')
+        return -np.log( det_val )
+
     def kinetic_alink(self,iconf): # _klinks[iconf] links iconf-1 -> iconf
         iprev = (iconf-1)%self._nslice
-        dx2 = np.linalg.norm(self.confs[iprev]-self.confs[iconf],axis=1)**2.
-        return dx2.sum()/(4.*self._lam*self._tau)
+        return self.kinetic_action(iprev,iconf)
 
     def update_alinks(self):
         """ renew link actions from kinetic link actions and potential of every time slice """

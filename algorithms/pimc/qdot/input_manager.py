@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
     inp_manager = InputManager()
     args = inp_manager.parse_command_line()
-    print vars(args).keys()
+    print vars(args)
 
     #print inp_manager.parse_input_file('sho.txt')
 
