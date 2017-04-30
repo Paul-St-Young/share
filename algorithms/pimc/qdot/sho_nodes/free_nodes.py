@@ -1,16 +1,20 @@
 #!/usr/bin/env python
 import numpy as np
+import sys
+sys.path.insert(0,'../')
 from path import Path
 
 def exact_sho_dm(conf1,conf2,omega,beta,lam):
     nptcl = len(conf1)
+    if len(conf1) != len(conf2):
+        raise RuntimeError('conf1,conf2 length mismatch')
     rho_mat = np.zeros([nptcl,nptcl])
     for i in range(nptcl):
         for j in range(nptcl):
             rho_mat[i,j] = exact_sho_1dm(conf1[i],conf2[j],omega,beta,lam)
         # end for j
     # end for i
-    return np.linalg.det(rho_mat)
+    return np.linalg.slogdet(rho_mat)
 
 def exact_sho_1dm(r1,r2,omega,beta,lam):
     """  exact one-body density matrix of a harmonic oscillator
@@ -27,6 +31,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-beta',type=float,default=5.0,help='inverse temperature, default 5.0')
+    parser.add_argument('-bfree',type=float,default=80.0,help='inverse temperature for free particle nodes, default 80.0')
     args = parser.parse_args()
 
     nslice= 2
@@ -40,7 +45,7 @@ if __name__ == '__main__':
     conf2[2,1] = 0.1
 
     beta = args.beta
-    path = Path(beta,nslice=nslice,nptcl=nptcl,ndim=ndim
+    path = Path(args.bfree,nslice=nslice,nptcl=nptcl,ndim=ndim
             ,confs=np.array([conf1,conf2]))
 
     nx  = 25
@@ -59,11 +64,8 @@ if __name__ == '__main__':
             except RuntimeError:
                 my_rho[i,j] = -1
 
-            true_dm = exact_sho_dm(path.confs[0],path.confs[1],1.0,beta,0.5)
-            if true_dm > 0:
-                exact_rho[i,j] = 1
-            else:
-                exact_rho[i,j] = -1
+            sign,logdet = exact_sho_dm(path.confs[0],path.confs[1],1.0,beta,0.5)
+            exact_rho[i,j] = sign
         # end for i
     # end for j
     
