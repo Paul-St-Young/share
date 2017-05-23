@@ -17,17 +17,18 @@ def update_lines(num,data,lines):
 # end def update_lines
 
 if __name__ == '__main__':
-    # Attach 3D axis to the figure
-    fig = plt.figure()
-    ax = p3.Axes3D(fig)
 
-    nframe = 100
-    natom  = 16
-    ndim   = 3
+    ndim = 3
 
     # local particle positions, must have shape (nframe,natom*ndim)
     data = np.loadtxt('nxyz.dat')
+    nframe,nad = data.shape
+    natom = nad/ndim
     data = data.reshape(nframe,natom,ndim)
+
+    # Attach 3D axis to the figure
+    fig = plt.figure()
+    ax = p3.Axes3D(fig)
 
     # make first frame: 16 dots, one for each particle
     lines = [ax.plot( data[0,:,0], data[0,:,1], data[0,:,2], 'o' )[0] for dat in data[0]]
