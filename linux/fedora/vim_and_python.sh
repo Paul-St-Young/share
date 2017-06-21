@@ -59,7 +59,8 @@ vim +PluginInstall +qall
 
 sudo dnf update -y
 
-sudo dnf install python-pip -y
+sudo dnf install python-pip tkinter.x86_64 -y
+# tkinter is needed by matplotlib.pyplot
 
 sudo -H pip install --upgrade pip
 sudo -H pip install jupyter numpy scipy pandas matplotlib
