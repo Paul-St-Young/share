@@ -8,7 +8,7 @@ sudo dnf groupinstall "Development Tools" -y # include Boost
 sudo dnf groupinstall "Development Libraries" -y
 
 # C++ development
-sudo dnf install gcc-c++.x86_64 cmake.x86_64
+sudo dnf install gcc-c++.x86_64 cmake.x86_64 -y
 
 # QMCPACK dependencies
-sudo dnf install libxml2-devel.x86_64 hdf5-devel.x86_64 boost-devel.x86_64
+sudo dnf install libxml2-devel.x86_64 hdf5-devel.x86_64 boost-devel.x86_64 -y

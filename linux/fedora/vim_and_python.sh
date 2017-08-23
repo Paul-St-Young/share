@@ -58,9 +58,12 @@ filetype plugin indent on    \" required
 vim +PluginInstall +qall
 
 sudo dnf update -y
-
+sudo dnf install python-devel -y # "Python.h"
 sudo dnf install python-pip tkinter.x86_64 -y
 # tkinter is needed by matplotlib.pyplot
 
+# solve 'gcc error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory'
+sudo dnf install redhat-rpm-config -y
+
 sudo -H pip install --upgrade pip
-sudo -H pip install jupyter numpy scipy pandas matplotlib
+sudo -H pip install numpy scipy pandas matplotlib
