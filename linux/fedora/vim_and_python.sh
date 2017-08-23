@@ -59,7 +59,8 @@ vim +PluginInstall +qall
 
 sudo dnf update -y
 sudo dnf install python-devel -y # "Python.h"
-sudo dnf install python-pip tkinter.x86_64 -y
+sudo dnf install python-pip -y 
+sudo dnf install python2-tkinter.x86_64 -y
 # tkinter is needed by matplotlib.pyplot
 
 # solve 'gcc error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory'
