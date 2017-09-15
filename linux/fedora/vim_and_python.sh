@@ -66,5 +66,6 @@ sudo dnf install python2-tkinter.x86_64 -y
 # solve 'gcc error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory'
 sudo dnf install redhat-rpm-config -y
 
-sudo -H pip install --upgrade pip
-sudo -H pip install numpy scipy pandas matplotlib
+pip install --upgrade pip
+pip install --user numpy scipy pandas matplotlib
+pip install --user lxml h5py scikit-image
