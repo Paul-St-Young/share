@@ -42,7 +42,7 @@ if __name__ == '__main__':
   from basis import bfd_basis
   from pyscf.pbc import gto
   from pyscf.pbc.scf import RHF
-  from qharv.cross import pyscf
+  from qharv.cross import pqscf
 
   mygs  = 16 # grid density
 
