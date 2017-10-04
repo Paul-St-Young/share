@@ -67,7 +67,7 @@ if __name__ == '__main__':
   axes  = (np.ones((3,3))-np.eye(3))*alat0/2.0
   elem  = ['C','C']
   pos   = np.array([[0,0,0],[0.5,0.5,0.5]])*alat0
-  atoms = pyscf.atom_text(elem,pos)
+  atoms = pqscf.atom_text(elem,pos)
 
   gs    = np.array([mygs]*3)
   basis = bfd_basis()
