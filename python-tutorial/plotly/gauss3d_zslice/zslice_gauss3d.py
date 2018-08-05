@@ -40,7 +40,7 @@ if __name__ == '__main__':
     fig = dict(
       data=frames[0]['data'],
       layout=layout,
-      frames=frames
+      frames=frames[1:]
     )
 
     plot(fig)
