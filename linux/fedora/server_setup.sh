@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# module command will be enabled the next time shell sources /etc/share/Modules/init/[shell]
-sudo dnf install environment-modules.x86_64 -y
-
 # Red Hat equilalent of 'build-essentials'
 sudo dnf groupinstall "Development Tools" -y # include Boost
 sudo dnf groupinstall "Development Libraries" -y

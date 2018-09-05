@@ -14,4 +14,4 @@ sudo systemctl enable docker
 
 # test
 sudo systemctl start docker.service
-docker run hello-world
+#docker run hello-world
