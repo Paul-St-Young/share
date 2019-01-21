@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# enable ssh
+sudo systemctl enable sshd.service
+
 # Red Hat equilalent of 'build-essentials'
 sudo dnf groupinstall "Development Tools" -y # include Boost
 sudo dnf groupinstall "Development Libraries" -y
