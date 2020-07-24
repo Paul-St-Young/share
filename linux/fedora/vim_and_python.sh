@@ -2,7 +2,7 @@
 # source: VIM and Python - a Match Made in Heaven, Real Python, https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
 
 # backup .vimrc
-if [ -f ~/.vimrc ] then
+if [ -f ~/.vimrc ]; then
   cp ~/.vimrc ~/.vimrc.bkp
 fi
 
@@ -61,8 +61,8 @@ filetype plugin indent on    \" required
 vim +PluginInstall +qall
 
 sudo dnf install python-devel -y # "Python.h"
-sudo dnf install python-pip -y 
-sudo dnf install python2-tkinter.x86_64 -y
+#sudo dnf install python-pip -y
+#sudo dnf install python2-tkinter.x86_64 -y
 # tkinter is needed by matplotlib.pyplot
 
 ## solve 'gcc error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory'
