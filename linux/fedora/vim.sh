@@ -1,5 +1,6 @@
 #!/bin/bash
-# source: VIM and Python - a Match Made in Heaven, Real Python, https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
+# source: VIM and Python - a Match Made in Heaven, Real Python
+#  https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven
 
 # backup .vimrc
 if [ -f ~/.vimrc ]; then
@@ -10,7 +11,6 @@ fi
 sudo dnf install vim git -y
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 
 echo "
 \" use spaces instead of tabs
@@ -52,22 +52,19 @@ Plugin 'gmarik/Vundle.vim'
 
 \" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
-
 \" All of your Plugins must be added before the following line
 call vundle#end()            \" required
 filetype plugin indent on    \" required
 
+\" snakemake syntax highlight
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead snakefile set syntax=snakemake
+au BufNewFile,BufRead *.smk set syntax=snakemake
 " > ~/.vimrc
 vim +PluginInstall +qall
 
-sudo dnf install python-devel -y # "Python.h"
-#sudo dnf install python-pip -y
-#sudo dnf install python2-tkinter.x86_64 -y
-# tkinter is needed by matplotlib.pyplot
-
-## solve 'gcc error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory'
-#sudo dnf install redhat-rpm-config -y
-
-#pip install --upgrade pip  # bad idea to upgrade pip beyond system support
-pip install --user numpy scipy pandas matplotlib
-pip install --user lxml h5py scikit-image
+wget https://mstamenk.github.io/assets/files/snakemake.vim
+if [ ! -d ~/.vim/syntax ]; then
+  mkdir ~/.vim/syntax
+fi
+mv snakemake.vim ~/.vim/syntax
